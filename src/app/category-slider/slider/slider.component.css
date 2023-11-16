@@ -1,0 +1,148 @@
+
+html,
+body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+section{
+    margin: 0;
+    padding: 0;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a {
+    padding: 0;
+    margin: 0;
+    
+}
+h1{
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.container-x {
+    display: block;
+}
+
+.content {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 20px;
+    justify-content: space-evenly;
+    align-items: safe;
+}
+
+.card {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    width: 25%;
+    transition: transform 0.3s ease-in-out;
+    border: solid 0.5px  hsla(0, 0%, 29%, 0.712); 
+       border-radius: 10px;
+    padding: 10px;
+    background-color: #ffffff;
+    overflow: hidden;   
+
+}
+.card-header {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    background-color: #ffffff08;
+    border: none;
+}
+
+.card-body {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+}
+.card-body>img {
+    height: 250px;
+    width: 290px;
+    margin: 0;
+    padding: 0;
+    scale: 1.1;
+}
+
+.card-footer {
+    height: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: end;
+    border: none;
+    background-color: transparent;
+
+}
+.fa-star, .fa-star-half-stroke{
+    color: #fc9700;
+}
+.items-location{
+    color: blue;
+    font-size: small;
+    font-weight: bold;
+}
+.inline-style{
+    display: inline-block;
+}
+
+.card-footer>button {
+    width: 100%;
+    margin: 5px;
+    padding: 10px;
+    background-color: #e44d26;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  
+}
+.card-footer>button:hover {
+    background-color: #333;
+}
+
+
+/* Small devices (portrait tablets and large phones, 320px and up) */
+@media only screen and (min-width: 320px) {
+    .card {
+        width: calc(100%);
+    }
+}
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    .card {
+        width: calc(100%);
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .card {
+        max-width: calc(50% - 20px);
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    .card {
+        max-width: calc(25% - 20px);
+    }
+}

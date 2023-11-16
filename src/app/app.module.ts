@@ -14,7 +14,7 @@ import { SliderComponent } from './category-slider/slider/slider.component';
     AppRoutingModule
   ],
   providers: [],
-  bootstrap: [AppComponent,
-  ]
+  bootstrap: [AppComponent ]
+  // bootstrap: [SliderComponent ]
 })
 export class AppModule { }
