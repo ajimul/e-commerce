@@ -1,0 +1,67 @@
+.slider-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.slider {
+    display: flex;
+    scroll-snap-type: x mandatory;
+}
+
+.slider img {
+    width: 100%;
+    height: 350px;
+    flex-shrink: 0;
+    scroll-snap-align: start; 
+        object-fit: cover; 
+}
+
+.indicators {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    z-index: 99;
+    top: 80%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+}
+
+.indicators div {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #ccc;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.indicators div.active {
+    background-color: #555;
+}
+
+.control-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: blue;
+    cursor: pointer;
+    opacity: 0.5;
+    z-index: 99;
+}
+
+.control-btn:hover {
+    opacity: 1;
+}
+
+.control-btn.left {
+    left: 0;
+}
+
+.control-btn.right {
+    right: 0;
+}

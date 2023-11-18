@@ -1,6 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 import Swiper from 'swiper';
-import { SliderComponent,CardData } from './category-slider/slider/slider.component';
+import { CardItemsSliderComponent,CardData } from './card-items-slider/card-items-slider.component';
 
 @Component({
   selector: 'app-root',
@@ -17,7 +17,7 @@ export class AppComponent {
       clickable: true,
     },
   });
-  @ViewChild('sliderComponent', { static: false }) sliderComponent!: SliderComponent;
+  @ViewChild('cardItemsSliderComponent', { static: false }) cardItemsSliderComponent!: CardItemsSliderComponent;
 
   // other code...
 
@@ -31,9 +31,9 @@ export class AppComponent {
   
   getSliderComponentInstance() {
     // Access the SliderComponent instance and do something with it
-    if (this.sliderComponent) {
+    if (this.cardItemsSliderComponent) {
       // Now you have access to the SliderComponent instance
-      alert('SliderComponent instance: '+ this.sliderComponent);
+      alert('SliderComponent instance: '+ this.cardItemsSliderComponent);
     }
   }
 }

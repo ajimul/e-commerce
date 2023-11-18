@@ -1,0 +1,18 @@
+
+<div class="card-slider-container">
+  <div class="card-slider" #cardSlider >
+    <div class="card" *ngFor="let cardData of cardDataArray; let i = index">
+      <div class="card-body"#card>
+        <img [src]="cardData.imageSrc" alt="Comming Soon!">
+        <p>card {{1+i}}</p>
+      </div>
+    </div>
+  </div>
+
+  <button class="control-btn left" (click)="prevCard()">
+    <i class="fas fa-chevron-left fa-xl"></i>
+  </button>
+  <button class="control-btn right" (click)="nextCard()">
+    <i class="fas fa-chevron-right fa-xl"></i>
+  </button>
+</div>

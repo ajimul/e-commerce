@@ -3,18 +3,24 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { SliderComponent } from './category-slider/slider/slider.component';
+import { CardItemsSliderComponent } from './card-items-slider/card-items-slider.component';
+import { ImageSliderComponent } from './image-slider/image-slider.component';
+import { CardComponent } from './card/card.component';
 @NgModule({
   declarations: [
     AppComponent,
-    SliderComponent
+    CardItemsSliderComponent,
+    ImageSliderComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule
   ],
   providers: [],
-  bootstrap: [AppComponent ]
-  // bootstrap: [SliderComponent ]
+    bootstrap: [AppComponent ]
+  // bootstrap: [CardItemsSliderComponent ]
+  // bootstrap: [ImageSliderComponent ]
+  // bootstrap: [CardComponent ] 
 })
 export class AppModule { }

@@ -1,0 +1,47 @@
+
+.card-slider-container {
+    position: relative;
+    overflow: hidden;
+  }
+  .card-slider {
+    display: inline-flex;
+    gap: 25px;
+        }
+  .card {
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease-in-out;
+    border: solid 0.5px hsla(0, 0%, 29%, 0.712);
+    border-radius: 10px;
+    padding: 10px;
+    background-color: #ffffff;
+  }
+  .card-body>img {
+    width:290px;
+    height: 250px;
+  }
+
+  .control-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: blue;
+    cursor: pointer;
+    opacity: 0.5;
+    z-index: 99;
+}
+
+.control-btn:hover {
+    opacity: 1;
+}
+
+.control-btn.left {
+    left: 0;
+}
+
+.control-btn.right {
+    right: 0;
+}

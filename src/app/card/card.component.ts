@@ -1,19 +1,12 @@
-import { AfterViewInit, Component, ElementRef, EventEmitter, Input, OnInit, Output } from '@angular/core';
-// Define the CardData interface
-export interface CardData {
-  id?: number;
-  imageSrc: string;
-  title: string;
-  weight: string;
-  stars: number;
-  location: string;
-}
+import { AfterViewInit, Component, EventEmitter, Output } from '@angular/core';
+import { CardData } from '../card-items-slider/card-items-slider.component';
+
 @Component({
-  selector: 'app-slider',
-  templateUrl: './slider.component.html',
-  styleUrls: ['./slider.component.css']
+  selector: 'app-card',
+  templateUrl: './card.component.html',
+  styleUrls: ['./card.component.css']
 })
-export class SliderComponent implements AfterViewInit {
+export class CardComponent implements AfterViewInit {
 [x: string]: any;
   @Output() cardClicked: EventEmitter<CardData> = new EventEmitter<CardData>();
 
