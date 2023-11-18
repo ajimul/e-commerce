@@ -1,11 +1,12 @@
-
-body{
+body {
     background-color: hsla(308, 100%, 52%, 0.178);
 }
-header{
+
+header {
     background-color: #ffffff;
     /* border: solid red */
 }
+
 /** First-nave Styles **/
 .first-nav {
     /* background-color: #cdd1d0; */
@@ -15,12 +16,14 @@ header{
     margin-top: 0;
     margin-bottom: 0;
 }
-h6{
+
+h6 {
     color: blue;
     font-size: small;
     font-weight: bold;
 
 }
+
 .first-nav>.flex-start {
     width: 35%;
 }
@@ -197,82 +200,78 @@ h6{
     padding-left: 5px;
     padding-right: 5px;
 }
+
 @media only screen and (max-width: 600px) {
     .carousel-item img {
-        width: 50%; 
+        width: 50%;
         zoom: 50%;
     }
 }
+
 /* ******************** */
 
 .carousel-item img {
-    width: 100%; 
+    width: 100%;
     height: 350px;
-    object-fit: cover; 
+    object-fit: cover;
 }
-.category{
+
+.category {
     margin-inline: 20px;
     margin-block: 5px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    flex:1 0 0%;
+    flex: 1 0 0%;
     row-gap: 18px;
 }
-.category-card-content{
+
+.category-card-content {
     display: flex;
     flex-direction: column;
     width: 310px;
     height: 337px;
-    border: solid 0.5px  hsla(0, 0%, 29%, 0.712);
+    border: solid 0.5px hsla(0, 0%, 29%, 0.712);
     background-color: #ffffff;
     border-radius: 15px;
     padding: 12px;
     row-gap: 5px;
 }
-.category-card-content> img{
-  width: 100%;
-  min-height: 240px;
+
+.category-card-content>img {
+    width: 100%;
+    min-height: 240px;
 }
 
-.category-items{
-    margin-inline: 20px;
-    margin-top: 25px ;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    flex:1 0 0%;
-    row-gap: 18px;
+.category-items {
+  
 }
 
-.category-items-card-content{
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    width: 310px;
-    height: 380px;
-    border: solid 0.5px  hsla(0, 0%, 29%, 0.712);
-    border-radius: 15px;
-    padding: 12px;
-    background-color: #ffffff;
-    row-gap: 10px;
-   
+/* category-items */
+/* Style the scrollbar */
+.category-items::-webkit-scrollbar {
+    /* width: 5px;  */
+    height: 8px;
 }
-.category-items-card-content> img{
-  width: 100%;
-min-height: 240px;
+
+/* Style the scrollbar track */
+.category-items::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+    /* Set the color of the track */
 }
-.fa-star, .fa-star-half-stroke{
-    color: #fc9700;
+
+/* Style the scrollbar thumb */
+.category-items::-webkit-scrollbar-thumb {
+    background-color: #888;
+    /* Set the color of the thumb */
+    border-radius: 5px;
+    /* Set the border radius of the thumb */
 }
-.items-location{
-    color: blue;
-    font-size: small;
-    font-weight: bold;
-}
-.inline-style{
-    display: inline-block;
+
+/* Style the scrollbar on hover */
+.category-items::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+    /* Set the color of the thumb on hover */
 }
 

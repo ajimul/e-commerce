@@ -47,7 +47,7 @@ h1{
     width: 25%;
     transition: transform 0.3s ease-in-out;
     border: solid 0.5px  hsla(0, 0%, 29%, 0.712); 
-       border-radius: 10px;
+    border-radius: 10px;
     padding: 10px;
     background-color: #ffffff;
     overflow: hidden;   
@@ -76,7 +76,7 @@ h1{
     width: 290px;
     margin: 0;
     padding: 0;
-    scale: 1.1;
+    scale: 1;
 }
 
 .card-footer {

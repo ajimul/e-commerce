@@ -1,47 +1,69 @@
-
 .card-slider-container {
-    position: relative;
-    overflow: hidden;
-  }
-  .card-slider {
-    display: inline-flex;
-    gap: 25px;
-        }
-  .card {
-    display: flex;
-    flex-direction: column;
-    transition: transform 0.3s ease-in-out;
-    border: solid 0.5px hsla(0, 0%, 29%, 0.712);
-    border-radius: 10px;
-    padding: 10px;
-    background-color: #ffffff;
-  }
-  .card-body>img {
-    width:290px;
-    height: 250px;
-  }
+position: relative;
 
-  .control-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: none;
-    border: none;
-    font-size: 24px;
-    color: blue;
-    cursor: pointer;
-    opacity: 0.5;
-    z-index: 99;
+
+}
+
+.card-slider {
+  width: 100%;
+  display: flex;
+  gap: 25px;
+  justify-content: space-around;
+  align-items: end;
+  padding-inline: 20px;
+ flex-wrap: nowrap;
+ padding-block: 10px;
+}
+
+.card {
+  /* width: 25%;
+  display: flex;
+  flex-direction: row;
+  transition: transform 0.3s ease-in-out;
+  border: solid 0.5px hsla(0, 0%, 29%, 0.712);
+  border-radius: 10px;
+  padding: 10px;
+  background-color: #ffffff;
+  justify-content: center; */
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  width: 25%;
+  transition: transform 0.3s ease-in-out;
+  border: solid 0.5px  hsla(0, 0%, 29%, 0.712); 
+  border-radius: 10px;
+  padding: 10px;
+  background-color: #ffffff;
+  overflow: hidden;   
+
+}
+
+.card-body>img {
+  width: 290px;
+  height: 250px;
+}
+
+.control-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: blue;
+  cursor: pointer;
+  opacity: 0.5;
+  z-index: 99;
 }
 
 .control-btn:hover {
-    opacity: 1;
+  opacity: 1;
 }
 
 .control-btn.left {
-    left: 0;
+  left: 0;
 }
 
 .control-btn.right {
-    right: 0;
+  right: 0;
 }

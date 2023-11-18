@@ -54,90 +54,15 @@
         <!-- Sub-nav Declaration If Required! -->
     </header>
     <section class="hero">
-        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
-                    aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
-                    aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
-                    aria-label="Slide 3"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
-                    aria-label="Slide 4"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4"
-                    aria-label="Slide 5"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="5"
-                    aria-label="Slide 6"></button>
-            </div>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="assets\Image\Hero image (1).jpg" class="d-block " alt="..."
-                        style="background-size: cover;">
-                </div>
-                <div class="carousel-item">
-                    <img src="assets\Image\Hero image (2).jpg" class="d-block " alt="..."
-                        style="background-size: cover; width: 100vw;">
-                </div>
-                <div class="carousel-item">
-                    <img src="assets\Image\Hero image (3).jpg" class="d-block " alt="..."
-                        style="background-size: cover;">
-                </div>
-                <div class="carousel-item">
-                    <img src="assets\Image\Hero image (4).jpg" class="d-block " alt="..."
-                        style="background-size: cover;">
-                </div>
-                <div class="carousel-item">
-                    <img src="assets\Image\Hero image (5).jpg" class="d-block " alt="..."
-                        style="background-size: cover;">
-                </div>
-                <div class="carousel-item">
-                    <img src="assets\Image\Hero image (6).jpg" class="d-block " alt="..."
-                        style="background-size: cover;">
-                </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
-                data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
-                data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
-        </div>
-    </section>
-    <!-- Category -->
-    <!-- <section class="category">
-        <div class="category-card-content">
-            <h5 style="font-weight:bold ; color: black;">Darjeeling Green-tea</h5> <img
-                src="assets\Image\Green-tea (1).jpg" alt="">
-            <h6>Shop more...</h6>
-        </div>
-        <div class="category-card-content">
-            <h5 style="font-weight:bold ; color: black;">Darjeeling Green-tea</h5> <img
-                src="assets\Image\Green-tea (2).jpg" alt="">
-            <h6>Shop more...</h6>
-        </div>
-        <div class="category-card-content">
-            <h5 style="font-weight:bold ; color: black;">Darjeeling Green-tea</h5> <img
-                src="assets\Image\Green-tea (3).jpg" alt="">
-            <h6>Shop more...</h6>
-        </div>
-        <div class="category-card-content">
-            <h5 style="font-weight:bold ; color: black;">Darjeeling Green-tea</h5> <img
-                src="assets\Image\Green-tea (4).jpg" alt="">
-            <h6>Shop more...</h6>
-        </div>
-    </section> -->
-
-    <!-- Items -->
-    <section class="category-items">
-       <!-- app.component.html -->
-       <app-card-items-slider #cardSlider (cardClicked)="onCardClicked($event)"></app-card-items-slider>
+        <app-image-slider></app-image-slider>
+        </section>
+   
+    <section class="category-items"  >
+       <app-card-items-slider  #cardSlider (cardClicked)="onCardClicked($event)"></app-card-items-slider>
     </section>
     <section class="featured-products">
-
+        <app-card  #cardSlider (cardClicked)="onCardClicked($event)"></app-card>
+    
     </section>
 
     <section class="deals">
