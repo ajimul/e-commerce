@@ -23,10 +23,10 @@ export class AppComponent {
  
   onCardClicked(cardData: CardData) {
     // Handle the emitted event here
-    alert('Card clicked in parent component: ' + cardData.title);
-    alert('Card clicked in parent component: ' + cardData.imageSrc);
-    alert('Card clicked in parent component: ' + cardData.weight);
-    alert('Card clicked in parent component: ' + cardData.stars);
+    // alert('Card clicked in parent component: ' + cardData.title);
+    // alert('Card clicked in parent component: ' + cardData.imageSrc);
+    // alert('Card clicked in parent component: ' + cardData.price);
+    // alert('Card clicked in parent component: ' + cardData.stars);
   }
   
   getSliderComponentInstance() {

@@ -3,7 +3,7 @@ export interface CardData {
   id?: number;
   imageSrc: string;
   title: string;
-  weight: string;
+  price: string;
   stars: number;
   location: string;
 }
@@ -16,57 +16,118 @@ export interface CardList {
   styleUrls: ['./card-items-slider.component.css']
 })
 export class CardItemsSliderComponent implements OnInit {
+
+
+  // @ViewChildren('.button-area button') preview: QueryList<ElementRef> | undefined;
+
   @Output() cardClicked: EventEmitter<CardData> = new EventEmitter<CardData>();
-  // @ViewChild('cardSlider') cardSlider!: ElementRef<HTMLDivElement>;
-  // @ViewChildren('card') cards!: QueryList<ElementRef<HTMLDivElement>>;
+  cardDataArray = [
+    {
+      imageSrc: 'assets/Image/Green-tea (1).jpg',
+      title: 'Green-Tea 1',
+      description: 'Shop now',
+      price: '10/kg',
+      stars: 4,
+      location: ''
+    },
+    {
+      imageSrc: 'assets/Image/Green-tea (2).jpg',
+      title: 'Green-Tea 2',
+      description: 'Shop now',
+      price: '',
+      stars: 3,
+      location: ''
+    },
+    {
+      imageSrc: 'assets/Image/Green-tea (3).jpg',
+      title: 'Green-Tea 3',
+      description: 'Shop now',
+      price: '',
+      stars: 6,
+      location: ''
+    },
+    {
+      imageSrc: 'assets/Image/Green-tea (4).jpg',
+      title: 'Green-Tea 4',
+      description: 'Shop now',
+      price: '',
+      stars: 2,
+      location: ''
+    },
+    {
+      imageSrc: 'assets/Image/Green-tea (4).jpg',
+      title: 'Green-Tea 5',
+      description: 'Shop now',
+      price: '',
+      stars: 2,
+      location: ''
+    },
+    {
+      imageSrc: 'assets/Image/Green-tea (4).jpg',
+      title: 'Green-Tea 6',
+      description: 'Shop now',
+      price: '',
+      stars: 2,
+      location: ''
+    },
+    {
+      imageSrc: 'assets/Image/Green-tea (4).jpg',
+      title: 'Green-Tea 7',
+      description: 'Shop now',
+      price: '',
+      stars: 2,
+      location: ''
+    },
+    {
+      imageSrc: 'assets/Image/Green-tea (4).jpg',
+      title: 'Green-Tea 8',
+      description: 'Shop now',
+      price: '',
+      stars: 2,
+      location: ''
+    },
+    {
+      imageSrc: 'assets/Image/Green-tea (4).jpg',
+      title: 'Green-Tea 9',
+      description: 'Shop now',
+      price: '',
+      stars: 2,
+      location: ''
+    },
+    {
+      imageSrc: 'assets/Image/Green-tea (4).jpg',
+      title: 'Green-Tea 10',
+      description: 'Shop now',
+      price: '',
+      stars: 2,
+      location: ''
+    },
+
+
+  ];
 
 
   ngOnInit(): void {
 
   }
+  @ViewChild('cardsContainer') cardsContainer: ElementRef | undefined;
 
-  counter = 0;
-  totalWidth = 0;
-  displayCardNo: number = 4;
-
-  cardDataList: CardList[] = [
-  { imageSrc: 'assets/Image/Green-tea (1).jpg' },
-  { imageSrc: 'assets/Image/Green-tea (2).jpg' },
-  { imageSrc: 'assets/Image/Green-tea (3).jpg' },
-  { imageSrc: 'assets/Image/Green-tea (4).jpg' },
-  { imageSrc: 'assets/Image/Green-tea (5).jpg' },
-  { imageSrc: 'assets/Image/Green-tea (6).jpg' },
-  { imageSrc: 'assets/Image/Green-tea (7).jpg' },
-  { imageSrc: 'assets/Image/Green-tea (8).jpg' },
-  { imageSrc: 'assets/Image/Green-tea (9).jpg' },
-  { imageSrc: 'assets/Image/Green-tea (10).jpg' }];
-  cardDataArray: CardList[] = [];
-
-  ngAfterViewInit() {
-    for (let i = 0; i < this.displayCardNo; i++) {
-      this.cardDataArray.push(this.cardDataList[i]);
-      }
-    }
-
+  constructor(private el: ElementRef) { }
   
-  nextCard() {
-    this.cardDataArray = [];
-    this.cardDataArray.push(
-      { imageSrc: 'assets/Image/Green-tea (6).jpg' },
-      { imageSrc: 'assets/Image/Green-tea (7).jpg' },
-      { imageSrc: 'assets/Image/Green-tea (8).jpg' },
-      { imageSrc: 'assets/Image/Green-tea (9).jpg' });
+  nextSlide() {
+    const eml = this.cardsContainer?.nativeElement;
+    const cards = eml?.getElementsByClassName("card");
+    eml?.append(cards?.[0]);
+  }
+  
+  prevSlide() {
+    const eml = this.cardsContainer?.nativeElement;
+    const cards = eml?.getElementsByClassName("card");
+    eml?.prepend(cards?.[cards.length - 1]);
   }
 
-  prevCard() {
-    
 
-      this.cardDataArray = [
-        { imageSrc: 'assets/Image/Green-tea (1).jpg' },
-        { imageSrc: 'assets/Image/Green-tea (2).jpg' },
-        { imageSrc: 'assets/Image/Green-tea (3).jpg' },
-        { imageSrc: 'assets/Image/Green-tea (4).jpg' },
-      ];
-    
+  onCardClick(event: MouseEvent, cardData: CardData, index: number) {
+    this.cardClicked.emit(cardData);
   }
 }

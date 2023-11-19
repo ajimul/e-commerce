@@ -1,148 +1,140 @@
 
-html,
-body {
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-section{
-    margin: 0;
-    padding: 0;
-}
-
-p,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-a {
-    padding: 0;
-    margin: 0;
-    
-}
-h1{
-    font-weight: 600;
-    font-size: 1rem;
-}
-
-.container-x {
-    display: block;
-}
-
-.content {
+/* Cards container styles */
+.cards-container {
     display: flex;
     flex-wrap: wrap;
-    row-gap: 20px;
-    justify-content: space-evenly;
-    align-items: safe;
-}
-
-.card {
-    display: flex;
-    flex-wrap: nowrap;
-    flex-direction: column;
-    width: 25%;
-    transition: transform 0.3s ease-in-out;
-    border: solid 0.5px  hsla(0, 0%, 29%, 0.712); 
-    border-radius: 10px;
-    padding: 10px;
-    background-color: #ffffff;
-    overflow: hidden;   
-
-}
-.card-header {
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    align-items: center;
-    width: 100%;
-    background-color: #ffffff08;
-    border: none;
-}
-
-.card-body {
-    display: flex;
-    flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
-    width: 100%;
-
+    gap: 20px;
+    box-sizing: border-box;
 }
-.card-body>img {
-    height: 250px;
-    width: 290px;
+
+.cards-container>div {
     margin: 0;
     padding: 0;
-    scale: 1;
 }
 
-.card-footer {
-    height: 100%;
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-items: end;
-    border: none;
-    background-color: transparent;
+/* Card styles */
+.card {
+    flex: 0 1 calc(25% - 40px);
+    max-width: 300px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s;
 
 }
-.fa-star, .fa-star-half-stroke{
-    color: #fc9700;
-}
-.items-location{
-    color: blue;
-    font-size: small;
-    font-weight: bold;
-}
-.inline-style{
-    display: inline-block;
+
+.card:hover {
+    transform: scale(1.05);
 }
 
-.card-footer>button {
+/* Card content styles */
+.card-content {
+    padding: 20px;
+}
+
+/* Card image styles */
+.card-img img {
     width: 100%;
-    margin: 5px;
+    height: 200px;
+    /* Adjust the height as needed */
+    object-fit: cover;
+}
+
+/* Card title styles */
+.card-title {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+/* Card description styles */
+.card-description {
+    color: #424242;
+    margin-block: 0;
+    padding-block: 0;
+    font-size: 0.8rem;
+    font-size: smaller;
+
+}
+
+/* Card price styles */
+.card-price {
+    color: #e44d26;
+    font-weight: bold;
+    font-size: 1.5em;
+    margin-block: 0;
+    padding-block: 0;
+}
+
+/* Card rating styles */
+.card-rating {
+    color: #ffd700;
+    margin-block: 0;
+    padding-block: 0;
+}
+
+.card-location{
+    color: blue;
+    font-weight: 500;
+}
+
+/* Card button styles */
+.card-btn {
+    display: block;
+    width: 100%;
     padding: 10px;
     background-color: #e44d26;
     color: #fff;
     text-align: center;
     text-decoration: none;
     border: none;
-    border-radius: 10px;
+    border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease-in-out;
-  
+    transition: background-color 0.3s;
+    margin-top: 10px;
 }
-.card-footer>button:hover {
+
+.card-btn:hover {
     background-color: #333;
+    margin-top: 10px;
 }
 
+/* ... (Previous styles) ... */
 
-/* Small devices (portrait tablets and large phones, 320px and up) */
-@media only screen and (min-width: 320px) {
+/* Media query for responsiveness */
+@media screen and (min-width: 1201px) {
     .card {
-        width: calc(100%);
+        flex-basis: calc(25% - 40px);
+        /* Adjust the width here */
     }
-}
-/* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {
-    .card {
-        width: calc(100%);
-    }
+
 }
 
-/* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {
+@media screen and (max-width: 1200px) and (min-width: 993px) {
     .card {
-        max-width: calc(50% - 20px);
+        flex-basis: calc(33.33% - 40px);
+        /* Adjust the width here */
     }
+
 }
 
-/* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {
+@media screen and (max-width: 992px) {
     .card {
-        max-width: calc(25% - 20px);
+        flex-basis: calc(50% - 40px);
+        /* Adjust the width here */
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+    .cards-container {
+        padding: 10px;
+    }
+
+    .card {
+        flex-basis: calc(100% - 20px);
+        /* Adjust the width here */
     }
 }

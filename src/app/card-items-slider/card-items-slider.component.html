@@ -1,19 +1,30 @@
 <section>
-  <div class="card-slider-container">
-    <div class="card-slider" #cardSlider >
-      <div class="card" *ngFor="let cardData of cardDataArray; let i = index" #card >
-        <div class="card-body">
-          <img [src]="cardData.imageSrc" alt="Coming Soon!">
-          <p>card {{ 1 + i }}</p>
+  <div class="cards-container" #cardsContainer>
+    <div class="card" *ngFor="let cardData of cardDataArray; let i = index" (click)="onCardClick($event, cardData, i)">
+      <div class="card-content">
+        <div class="card-title ">
+          <h2>{{ cardData.title }}</h2>
         </div>
+        <div class="card-img ">
+          <img [src]="cardData.imageSrc" alt="Comming Soon!">
+        </div>
+
+        <div class="card-description color">{{cardData.description}}</div>
+        <!-- <div class="card-price ">₹{{cardData.price}}</div> -->
+        <!-- <div class="card-rating ">
+          <i class="fa-solid fa-star"*ngFor="let _ of [].constructor(cardData.stars).fill(0); let i = index"></i>
+        </div> -->
+        <div class="card-location ">{{ cardData.location }}</div>
+        <!-- <button class="card-btn">Add to Cart</button> -->
       </div>
     </div>
-  
-    <button class="control-btn left" (click)="prevCard()">
-      <i class="fas fa-chevron-left fa-xl"></i>
-    </button>
-    <button class="control-btn right" (click)="nextCard()">
-      <i class="fas fa-chevron-right fa-xl"></i>
-    </button>
-   </div> 
+    <div class="button-area">
+      <button class="control-btn left" (click)="prevSlide()">
+        <i class="fas fa-chevron-left fa-xl" ></i>
+      </button>
+      <button class="control-btn right"(click)="nextSlide()">
+        <i class="fas fa-chevron-right fa-xl"></i>
+      </button>
+    </div>
+  </div>
 </section>

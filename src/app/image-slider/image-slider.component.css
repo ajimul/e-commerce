@@ -48,20 +48,22 @@
     background: none;
     border: none;
     font-size: 24px;
-    color: blue;
+    color: rgb(80, 112, 104);
     cursor: pointer;
     opacity: 0.5;
     z-index: 99;
-}
-
-.control-btn:hover {
+  }
+  
+  .control-btn:hover {
     opacity: 1;
-}
-
-.control-btn.left {
+    color: rgb(95, 95, 95);
+  }
+  
+  .control-btn.left {
     left: 0;
-}
-
-.control-btn.right {
+  }
+  
+  .control-btn.right {
     right: 0;
-}
+  }
+  

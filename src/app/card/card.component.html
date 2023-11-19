@@ -1,34 +1,23 @@
-<section>
-    <div class="container-x">
-      <div class="content">
-        <!-- card.component.html -->
-        <div class="card" *ngFor="let cardData of cardDataArray; let i = index" (click)="onCardClick($event, cardData, i)">
-          <div class="card-header">
-            <!-- Header content here -->
-          </div>
-          <div class="card-body" >
-            <img [src]="cardData.imageSrc" alt="Comming Soon!">
-          </div>
-          <div class="card-details">
-            <span>
-              <p style="font-weight:bold; color: black;">{{ cardData.title }}</p>
-            </span>
-            <span style="color: black;">
-              <i class="fa-sharp fa-solid fa-indian-rupee-sign"></i>
-              <p style="display: inline-block;">{{ cardData.weight }}</p>
-            </span><br>
-            <span>
-              <i class="fa-solid fa-star" *ngFor="let _ of [].constructor(cardData.stars).fill(0); let i = index"></i>
-            </span>
-            <span>
-              <p class="items-location">{{ cardData.location }}</p>
-            </span>
-          </div>
-          <div class="card-footer">
-            <!-- Footer content here -->
-          </div>
+
+  <div class="cards-container">
+    <div class="card" *ngFor="let cardData of cardDataArray; let i = index" (click)="onCardClick($event, cardData, i)">
+      <div class="card-content">
+        <div class="card-img ">
+          <img [src]="cardData.imageSrc" alt="Comming Soon!">
         </div>
-  
+        <div class="card-title ">
+          <h2>{{ cardData.title }}</h2>
+        </div>
+        <div class="card-description ">{{cardData.description}}</div>
+        <div class="card-price ">₹{{cardData.price}}</div>
+        <div class="card-rating ">
+          <i class="fa-solid fa-star"*ngFor="let _ of [].constructor(cardData.stars).fill(0); let i = index"></i>
+        </div>
+        <div class="card-location ">{{ cardData.location }}</div>
+        <button class="card-btn">Add to Cart</button>
       </div>
     </div>
-  </section>
+    <div>
+
+    </div>
+  </div>
