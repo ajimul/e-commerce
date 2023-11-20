@@ -1,7 +1,7 @@
 
   <div class="cards-container">
     <div class="card" *ngFor="let cardData of cardDataArray; let i = index" (click)="onCardClick($event, cardData, i)">
-      <div class="card-content">
+      <div class="card-content" >
         <div class="card-img ">
           <img [src]="cardData.imageSrc" alt="Comming Soon!">
         </div>
@@ -14,7 +14,7 @@
           <i class="fa-solid fa-star"*ngFor="let _ of [].constructor(cardData.stars).fill(0); let i = index"></i>
         </div>
         <div class="card-location ">{{ cardData.location }}</div>
-        <button class="card-btn">Add to Cart</button>
+        <button class="card-btn" (click)="AddCard($event)">Add to Cart</button>
       </div>
     </div>
     <div>

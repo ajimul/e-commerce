@@ -44,7 +44,134 @@ export class CardComponent implements AfterViewInit {
       stars: 2,
       location: 'India, Westbengal,Siliguri,734011'
     },
-
+    {
+      imageSrc: 'assets/Image/Darjeeling-tea (1).jpg',
+      title: 'Green-Tea',
+      description: 'A refreshing, antioxidant-rich beverage with a light, earthy flavor. Known for promoting wellness and boosting metabolism.',
+      price: '10/kg',
+      stars: 4,
+      location: 'India, Westbengal,Siliguri,734011'
+    },
+    {
+      imageSrc: 'assets/Image/Darjeeling-tea (2).jpg',
+      title: 'Green-Tea',
+      description: 'A refreshing, antioxidant-rich beverage with a light, earthy flavor. Known for promoting wellness and boosting metabolism.',
+      price: '15/kg',
+      stars: 3,
+      location: 'India, Westbengal,Siliguri,734011'
+    },
+    {
+      imageSrc: 'assets/Image/Darjeeling-tea (3).jpg',
+      title: 'Green-Tea',
+      description: 'A refreshing, antioxidant-rich beverage with a light, earthy flavor. Known for promoting wellness and boosting metabolism.',
+      price: '15/kg',
+      stars: 6,
+      location: 'India, Westbengal,Siliguri,734011'
+    },
+    {
+      imageSrc: 'assets/Image/Darjeeling-tea (4).jpg',
+      title: 'Green-Tea',
+      description: 'A refreshing, antioxidant-rich beverage with a light, earthy flavor. Known for promoting wellness and boosting metabolism.',
+      price: '15/kg',
+      stars: 2,
+      location: 'India, Westbengal,Siliguri,734011'
+    },
+    {
+      imageSrc: 'assets/Image/Darjeeling-tea (1).jpg',
+      title: 'Green-Tea',
+      description: 'A refreshing, antioxidant-rich beverage with a light, earthy flavor. Known for promoting wellness and boosting metabolism.',
+      price: '10/kg',
+      stars: 4,
+      location: 'India, Westbengal,Siliguri,734011'
+    },
+    {
+      imageSrc: 'assets/Image/Darjeeling-tea (2).jpg',
+      title: 'Green-Tea',
+      description: 'A refreshing, antioxidant-rich beverage with a light, earthy flavor. Known for promoting wellness and boosting metabolism.',
+      price: '15/kg',
+      stars: 3,
+      location: 'India, Westbengal,Siliguri,734011'
+    },
+    {
+      imageSrc: 'assets/Image/Darjeeling-tea (3).jpg',
+      title: 'Green-Tea',
+      description: 'A refreshing, antioxidant-rich beverage with a light, earthy flavor. Known for promoting wellness and boosting metabolism.',
+      price: '15/kg',
+      stars: 6,
+      location: 'India, Westbengal,Siliguri,734011'
+    },
+    {
+      imageSrc: 'assets/Image/Darjeeling-tea (4).jpg',
+      title: 'Green-Tea',
+      description: 'A refreshing, antioxidant-rich beverage with a light, earthy flavor. Known for promoting wellness and boosting metabolism.',
+      price: '15/kg',
+      stars: 2,
+      location: 'India, Westbengal,Siliguri,734011'
+    },
+    {
+      imageSrc: 'assets/Image/Darjeeling-tea (1).jpg',
+      title: 'Green-Tea',
+      description: 'A refreshing, antioxidant-rich beverage with a light, earthy flavor. Known for promoting wellness and boosting metabolism.',
+      price: '10/kg',
+      stars: 4,
+      location: 'India, Westbengal,Siliguri,734011'
+    },
+    {
+      imageSrc: 'assets/Image/Darjeeling-tea (2).jpg',
+      title: 'Green-Tea',
+      description: 'A refreshing, antioxidant-rich beverage with a light, earthy flavor. Known for promoting wellness and boosting metabolism.',
+      price: '15/kg',
+      stars: 3,
+      location: 'India, Westbengal,Siliguri,734011'
+    },
+    {
+      imageSrc: 'assets/Image/Darjeeling-tea (3).jpg',
+      title: 'Green-Tea',
+      description: 'A refreshing, antioxidant-rich beverage with a light, earthy flavor. Known for promoting wellness and boosting metabolism.',
+      price: '15/kg',
+      stars: 6,
+      location: 'India, Westbengal,Siliguri,734011'
+    },
+    {
+      imageSrc: 'assets/Image/Darjeeling-tea (4).jpg',
+      title: 'Green-Tea',
+      description: 'A refreshing, antioxidant-rich beverage with a light, earthy flavor. Known for promoting wellness and boosting metabolism.',
+      price: '15/kg',
+      stars: 2,
+      location: 'India, Westbengal,Siliguri,734011'
+    },
+    {
+      imageSrc: 'assets/Image/Darjeeling-tea (1).jpg',
+      title: 'Green-Tea',
+      description: 'A refreshing, antioxidant-rich beverage with a light, earthy flavor. Known for promoting wellness and boosting metabolism.',
+      price: '10/kg',
+      stars: 4,
+      location: 'India, Westbengal,Siliguri,734011'
+    },
+    {
+      imageSrc: 'assets/Image/Darjeeling-tea (2).jpg',
+      title: 'Green-Tea',
+      description: 'A refreshing, antioxidant-rich beverage with a light, earthy flavor. Known for promoting wellness and boosting metabolism.',
+      price: '15/kg',
+      stars: 3,
+      location: 'India, Westbengal,Siliguri,734011'
+    },
+    {
+      imageSrc: 'assets/Image/Darjeeling-tea (3).jpg',
+      title: 'Green-Tea',
+      description: 'A refreshing, antioxidant-rich beverage with a light, earthy flavor. Known for promoting wellness and boosting metabolism.',
+      price: '15/kg',
+      stars: 6,
+      location: 'India, Westbengal,Siliguri,734011'
+    },
+    {
+      imageSrc: 'assets/Image/Green-tea (12).jpg',
+      title: 'Green-Tea',
+      description: 'A refreshing, antioxidant-rich beverage with a light, earthy flavor. Known for promoting wellness and boosting metabolism.',
+      price: '15/kg',
+      stars: 2,
+      location: 'India, Westbengal,Siliguri,734011'
+    },
 
   ];
   ngAfterViewInit(): void {
@@ -52,8 +179,13 @@ export class CardComponent implements AfterViewInit {
   onCardClick(event: MouseEvent, cardData: CardData, index: number) {
     
     this.cardClicked.emit(cardData);
-  }
+    alert("Card");
 
+  }
+  AddCard(event: Event) {
+    event.stopPropagation();
+    alert("Add Card");
+  }
 
 }
 

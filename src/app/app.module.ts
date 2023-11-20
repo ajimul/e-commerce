@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { CardItemsSliderComponent } from './card-items-slider/card-items-slider.component';
 import { ImageSliderComponent } from './image-slider/image-slider.component';
 import { CardComponent } from './card/card.component';
+import { SitemapComponent } from './sitemap/sitemap.component';
 @NgModule({
   declarations: [
     AppComponent,
     CardItemsSliderComponent,
     ImageSliderComponent,
-    CardComponent
+    CardComponent,
+    SitemapComponent
   ],
   imports: [
     BrowserModule,
@@ -19,6 +21,7 @@ import { CardComponent } from './card/card.component';
   ],
   providers: [],
     bootstrap: [AppComponent ]
+    // bootstrap: [SitemapComponent ]
   // bootstrap: [CardItemsSliderComponent ]
   // bootstrap: [ImageSliderComponent ]
   // bootstrap: [CardComponent ] 
