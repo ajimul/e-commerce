@@ -23,7 +23,7 @@ export class CardItemsSliderComponent implements OnInit {
   @Output() cardClicked: EventEmitter<CardData> = new EventEmitter<CardData>();
   cardDataArray = [
     {
-      imageSrc: 'assets/Image/Green-tea (1).jpg',
+      imageSrc: 'assets/Image/Green-tea (5).jpg',
       title: 'Green-Tea 1',
       description: 'Shop now',
       price: '10/kg',
@@ -31,7 +31,7 @@ export class CardItemsSliderComponent implements OnInit {
       location: ''
     },
     {
-      imageSrc: 'assets/Image/Green-tea (2).jpg',
+      imageSrc: 'assets/Image/Darjeeling-tea (5).jpg',
       title: 'Green-Tea 2',
       description: 'Shop now',
       price: '',
@@ -47,7 +47,7 @@ export class CardItemsSliderComponent implements OnInit {
       location: ''
     },
     {
-      imageSrc: 'assets/Image/Green-tea (4).jpg',
+      imageSrc: 'assets/Image/Darjeeling-tea (1).jpg',
       title: 'Green-Tea 4',
       description: 'Shop now',
       price: '',
@@ -63,7 +63,7 @@ export class CardItemsSliderComponent implements OnInit {
       location: ''
     },
     {
-      imageSrc: 'assets/Image/Green-tea (4).jpg',
+      imageSrc: 'assets/Image/Darjeeling-tea (1).jpg',
       title: 'Green-Tea 6',
       description: 'Shop now',
       price: '',
@@ -79,7 +79,7 @@ export class CardItemsSliderComponent implements OnInit {
       location: ''
     },
     {
-      imageSrc: 'assets/Image/Green-tea (4).jpg',
+      imageSrc: 'assets/Image/Darjeeling-tea (1).jpg',
       title: 'Green-Tea 8',
       description: 'Shop now',
       price: '',
@@ -95,7 +95,7 @@ export class CardItemsSliderComponent implements OnInit {
       location: ''
     },
     {
-      imageSrc: 'assets/Image/Green-tea (4).jpg',
+      imageSrc: 'assets/Image/Darjeeling-tea (1).jpg',
       title: 'Green-Tea 10',
       description: 'Shop now',
       price: '',

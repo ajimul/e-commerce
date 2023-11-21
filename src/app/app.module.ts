@@ -7,13 +7,15 @@ import { CardItemsSliderComponent } from './card-items-slider/card-items-slider.
 import { ImageSliderComponent } from './image-slider/image-slider.component';
 import { CardComponent } from './card/card.component';
 import { SitemapComponent } from './sitemap/sitemap.component';
+import { CardSliderComponent } from './card-slider/card-slider.component';
 @NgModule({
   declarations: [
     AppComponent,
     CardItemsSliderComponent,
     ImageSliderComponent,
     CardComponent,
-    SitemapComponent
+    SitemapComponent,
+    CardSliderComponent
   ],
   imports: [
     BrowserModule,
@@ -25,5 +27,6 @@ import { SitemapComponent } from './sitemap/sitemap.component';
   // bootstrap: [CardItemsSliderComponent ]
   // bootstrap: [ImageSliderComponent ]
   // bootstrap: [CardComponent ] 
+  // bootstrap: [CardSliderComponent ] 
 })
 export class AppModule { }

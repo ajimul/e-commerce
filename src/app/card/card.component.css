@@ -81,7 +81,9 @@
     display: block;
     width: 100%;
     padding: 10px;
-    background-color: #e44d26;
+    /* background-color: #e44d26; */
+    /* background-color: rgb(119, 192, 2); */
+    background-color: rgb(254, 220, 0);
     color: #fff;
     text-align: center;
     text-decoration: none;
@@ -90,6 +92,7 @@
     cursor: pointer;
     transition: background-color 0.3s;
     margin-top: 10px;
+    color: black;
 }
 
 .card-btn:hover {

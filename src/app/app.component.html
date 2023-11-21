@@ -51,13 +51,17 @@
 
             </div>
         </div>
+        <div class="second-nav" style="background-color:bisque">
+            <ul ><li  style="border: none;">Bulk order</li></ul>
+        </div>
     </header>
     <section class="hero">
         <app-image-slider></app-image-slider>
         </section>
    
     <section class="category-items"  >
-       <app-card-items-slider  #cardSlider (cardClicked)="onCardClicked($event)"></app-card-items-slider>
+       <!-- <app-card-items-slider  #cardSlider (cardClicked)="onCardClicked($event)"></app-card-items-slider> -->
+       <app-card-slider></app-card-slider>
     </section>
     <section class="featured-products">
         <app-card  #cardSlider (cardClicked)="onCardClicked($event)"></app-card>

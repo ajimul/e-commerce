@@ -1,0 +1,31 @@
+<section>
+    <h1>card slider</h1>
+    <div class="cards-container" #shoppingContainer>
+        <div class="card" *ngFor="let cardData of cardDataArray; let i = index"
+            (click)="onCardClick($event, cardData, i)">
+            <div class="card-content">
+                <div class="card-title ">
+                    <h2>{{ cardData.title }}</h2>
+                </div>
+                <div class="card-img ">
+                    <img [src]="cardData.imageSrc" alt="Comming Soon!">
+                </div>
+
+                <div class="card-description color">{{cardData.description}}</div>
+                <!-- <div class="card-price ">₹{{cardData.price}}</div> -->
+                <!-- <div class="card-rating ">
+                <i class="fa-solid fa-star"*ngFor="let _ of [].constructor(cardData.stars).fill(0); let i = index"></i>
+              </div> -->
+                <div class="card-location ">{{ cardData.location }}</div>
+                <!-- <button class="card-btn">Add to Cart</button> -->
+            </div>
+        </div>
+
+    </div>
+    <div>
+        <div class="button-container">
+            <button (click)="preScroll()" [disabled]="isPrevDisabled()" class="pre"><i class="fas fa-chevron-left fa-xl" ></i></button>
+            <button (click)="nextScroll()" [disabled]="isNextDisabled()" class="next"><i class="fas fa-chevron-right fa-xl"></i></button>
+        </div>
+    </div>
+</section>

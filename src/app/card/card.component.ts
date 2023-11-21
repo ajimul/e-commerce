@@ -13,7 +13,7 @@ export class CardComponent implements AfterViewInit {
 
   cardDataArray = [
     {
-      imageSrc: 'assets/Image/Darjeeling-tea (1).jpg',
+      imageSrc: 'assets/Image/Green-tea (5).jpg',
       title: 'Green-Tea',
       description: 'A refreshing, antioxidant-rich beverage with a light, earthy flavor. Known for promoting wellness and boosting metabolism.',
       price: '10/kg',
@@ -21,7 +21,7 @@ export class CardComponent implements AfterViewInit {
       location: 'India, Westbengal,Siliguri,734011'
     },
     {
-      imageSrc: 'assets/Image/Darjeeling-tea (2).jpg',
+      imageSrc: 'assets/Image/Green-tea (5).jpg',
       title: 'Green-Tea',
       description: 'A refreshing, antioxidant-rich beverage with a light, earthy flavor. Known for promoting wellness and boosting metabolism.',
       price: '15/kg',
@@ -29,7 +29,7 @@ export class CardComponent implements AfterViewInit {
       location: 'India, Westbengal,Siliguri,734011'
     },
     {
-      imageSrc: 'assets/Image/Darjeeling-tea (3).jpg',
+      imageSrc: 'assets/Image/Green-tea (5).jpg',
       title: 'Green-Tea',
       description: 'A refreshing, antioxidant-rich beverage with a light, earthy flavor. Known for promoting wellness and boosting metabolism.',
       price: '15/kg',
