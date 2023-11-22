@@ -1,0 +1,37 @@
+<header id="navbar-main">
+    <div class="first-nav">
+        <ul class="flex-start">
+            <li>
+                <i class="fa-solid fa-bars fa-2xl"></i>
+            </li>
+            <li>
+                <a href="#"><img src="assets\Image\Logo-0.png" alt=""></a>
+            </li>
+        </ul>
+        <ul class="flex-center">
+            <li>
+                <select name="" id="">
+                    <option value="">All</option>
+                </select>
+                <input type="text" placeholder="Search Here!">
+                 <button ><i class="fa-solid fa-magnifying-glass"></i></button>
+            </li>
+        </ul>
+        <ul class="flex-end">
+            <li>
+                <span (click)="loginn()">
+                    <i class="fa-regular fa-user fa-xl">&nbsp;&nbsp;</i>
+                    Ajimul haque&nbsp;&nbsp;
+                    <i class="fa-solid fa-angle-down fa-xs" [ngClass]="{'isLoginn': isLoginn}"></i>
+                </span>
+            </li>
+
+            <li>
+                <span>{{totalCard}}</span>
+                <i class="fa-solid fa-cart-shopping fa-lg"></i>
+            </li>
+        </ul>
+
+    </div>
+
+</header>

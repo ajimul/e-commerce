@@ -3,17 +3,19 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ImageSliderComponent } from './image-slider/image-slider.component';
-import { CardComponent } from './card/card.component';
 import { SitemapComponent } from './sitemap/sitemap.component';
-import { CardSliderComponent } from './card-slider/card-slider.component';
+import { NavebarComponent } from './navebar/navebar.component';
+import { HeroCarouselComponent } from './hero-carousel/hero-carousel.component';
+import { CardCarouselComponent } from './card-carousel/card-carousel.component';
+import { CategoryCardListComponent } from './category-card-list/category-card-list.component';
 @NgModule({
   declarations: [
     AppComponent,
-    ImageSliderComponent,
-    CardComponent,
     SitemapComponent,
-    CardSliderComponent
+    NavebarComponent,
+    HeroCarouselComponent,
+    CardCarouselComponent,
+    CategoryCardListComponent
   ],
   imports: [
     BrowserModule,
@@ -21,6 +23,7 @@ import { CardSliderComponent } from './card-slider/card-slider.component';
   ],
   providers: [],
     bootstrap: [AppComponent ]
+    // bootstrap: [CardCarouselComponent ]
     // bootstrap: [SitemapComponent ]
   // bootstrap: [CardItemsSliderComponent ]
   // bootstrap: [ImageSliderComponent ]

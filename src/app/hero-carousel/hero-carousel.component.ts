@@ -1,11 +1,11 @@
 import { Component, ElementRef, HostListener, OnInit, QueryList, ViewChild, ViewChildren } from '@angular/core';
 
 @Component({
-  selector: 'app-image-slider',
-  templateUrl: './image-slider.component.html',
-  styleUrls: ['./image-slider.component.css']
+  selector: 'app-hero-carousel',
+  templateUrl: './hero-carousel.component.html',
+  styleUrls: ['./hero-carousel.component.css']
 })
-export class ImageSliderComponent implements OnInit {
+export class HeroCarouselComponent implements OnInit {
   @ViewChild('slider') sliderx: ElementRef | undefined;
   @ViewChildren('.indicators div') indicators: QueryList<ElementRef> | undefined;
   images = [

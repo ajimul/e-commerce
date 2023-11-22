@@ -8,11 +8,11 @@ export interface CardData {
   location: string;
 }
 @Component({
-  selector: 'app-card-slider',
-  templateUrl: './card-slider.component.html',
-  styleUrls: ['./card-slider.component.css']
+  selector: 'app-card-carousel',
+  templateUrl: './card-carousel.component.html',
+  styleUrls: ['./card-carousel.component.css']
 })
-export class CardSliderComponent {
+export class CardCarouselComponent{
   title = 'card-sliding';
   @ViewChild('shoppingContainer') shoppingContainer!: ElementRef;
   cardDataArray = [

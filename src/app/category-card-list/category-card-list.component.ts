@@ -1,12 +1,18 @@
-import { AfterViewInit, Component, ElementRef, EventEmitter, Output } from '@angular/core';
-import { CardData } from '../card-slider/card-slider.component';
-
+import { AfterViewInit, Component, EventEmitter, Output } from '@angular/core';
+export interface CardData {
+  id?: number;
+  imageSrc: string;
+  title: string;
+  price: string;
+  stars: number;
+  location: string;
+}
 @Component({
-  selector: 'app-card',
-  templateUrl: './card.component.html',
-  styleUrls: ['./card.component.css']
+  selector: 'app-category-card-list',
+  templateUrl: './category-card-list.component.html',
+  styleUrls: ['./category-card-list.component.css']
 })
-export class CardComponent implements AfterViewInit {
+export class CategoryCardListComponent implements AfterViewInit {
   [x: string]: any;
   @Output() cardClicked: EventEmitter<CardData> = new EventEmitter<CardData>();
 

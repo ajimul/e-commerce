@@ -9,62 +9,20 @@
 </head>
 
 <body>
-    <header id="navbar-main">
-        <div class="first-nav">
-            <div class="flex-start">
-                <div class="logo">
-                    <a href="#"><img src="assets\Image\Logo-0.png" alt=""></a>
-                </div>
-            </div>
-            <div class="flex-center">
-                <div class="searchDropdown">
-                    <select name="" id="">
-                        <option value="">All</option>
-                    </select>
-                </div>
-                <div class="search-field">
-                    <input type="text" placeholder="Search Here!">
-                </div>
-                <div class="search-submit">
-                    <span><button><i class="fa-solid fa-magnifying-glass"></i></button></span>
-                </div>
-            </div>
-            <div class="flex-end">
-                <div class="login">
-                    <button>
-                        <i class="fa-regular fa-user fa-xl">&nbsp;&nbsp;</i>
-                        <p>Ajimul haque&nbsp;&nbsp;</p>
-                        <i class="fa-solid fa-angle-down fa-xs"></i><i class="fa-solid fa-angle-up fa-xs"></i>
-                    </button>
-                </div>
-                <div class="cart">
-                    <ul>
-                        <li>
-                            <p style="font-size: 0.7rem; color: rgb(6, 121, 252);">1000</p>
-                        </li>
-                        <li><i class="fa-solid fa-cart-shopping fa-lg" style="color: rgb(250, 142, 0);"></i></li>
-                    </ul>
-                    <div class="cart-name">
-                        <p style="font-size: 0.8rem; color: rgb(0, 0, 0);">&nbsp;Cart</p>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-        <div class="second-nav" style="background-color:bisque">
-            <ul ><li  style="border: none;">Bulk order</li></ul>
-        </div>
-    </header>
+   
+    <section>
+        <app-navebar></app-navebar>
+    </section>
+    
     <section class="hero">
-        <app-image-slider></app-image-slider>
+        <app-hero-carousel></app-hero-carousel>
         </section>
    
     <section class="category-items"  >
-       <!-- <app-card-items-slider  #cardSlider (cardClicked)="onCardClicked($event)"></app-card-items-slider> -->
-       <app-card-slider></app-card-slider>
+       <app-card-carousel></app-card-carousel>
     </section>
     <section class="featured-products">
-        <app-card  #cardSlider (cardClicked)="onCardClicked($event)"></app-card>
+        <app-category-card-list  (cardClicked)="onCardClicked($event)"></app-category-card-list>
     
     </section>
 

@@ -1,6 +1,13 @@
 import { Component, ElementRef, Renderer2, ViewChild } from '@angular/core';
 import Swiper from 'swiper';
-import { CardData } from './card-slider/card-slider.component';
+export interface CardData {
+  id?: number;
+  imageSrc: string;
+  title: string;
+  price: string;
+  stars: number;
+  location: string;
+}
 
 @Component({
   selector: 'app-root',
