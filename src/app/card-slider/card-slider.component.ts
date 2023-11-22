@@ -1,4 +1,4 @@
-import { Component, ElementRef, EventEmitter, HostListener, Output, ViewChild } from '@angular/core';
+import { ChangeDetectorRef, Component, ElementRef, EventEmitter, HostListener, Output, ViewChild } from '@angular/core';
 export interface CardData {
   id?: number;
   imageSrc: string;
@@ -108,10 +108,16 @@ export class CardSliderComponent {
   totalCards = this.cardDataArray.length; // Adjust based on the actual number of cards
   visibleCards = 4; // Adjust based on the number of cards you want to show
   @Output() cardClicked: EventEmitter<CardData> = new EventEmitter<CardData>();
+ 
+  constructor(private cdr: ChangeDetectorRef) {}
+
   ngAfterViewInit(): void {
     this.setInitialVisibleCards();
     this.calculateCardWidth();
     this.scrollToCurrentPosition();
+    this.cdr.detectChanges();
+
+   
   }
 
   @HostListener('window:resize', ['$event'])
@@ -122,15 +128,16 @@ export class CardSliderComponent {
   }
 
   calculateCardWidth(): void {
-    if (this.shoppingContainer.nativeElement) {
-      const containerWidth = this.shoppingContainer.nativeElement.offsetWidth;
-      // Calculate the width for each card based on the number of visible cards
-      this.cardWidth = containerWidth / this.visibleCards - this.cardMargin * 2; // Adjust as needed
+    if (this.shoppingContainer.nativeElement instanceof HTMLElement) {
+      const cardElement=this.shoppingContainer.nativeElement.querySelector('.card');
+      if(cardElement instanceof HTMLElement){
+      this.cardWidth =cardElement.offsetWidth; // Adjust as needed
+    }
     }
   }
 
   recalculateScrollPosition(): void {
-    if (this.shoppingContainer.nativeElement) {
+    if (this.shoppingContainer.nativeElement instanceof HTMLElement) {
       const maxScrollAmount = Math.max(0, this.totalCards - this.visibleCards);
       const newScrollAmount = Math.min(this.scrollAmount, maxScrollAmount);
       this.scrollAmount = newScrollAmount;
@@ -139,32 +146,36 @@ export class CardSliderComponent {
   }
 
   scrollToCurrentPosition(): void {
-    if (this.shoppingContainer.nativeElement) {
+    if (this.shoppingContainer.nativeElement instanceof HTMLElement) {
       const maxScrollAmount = Math.max(0, this.totalCards - this.visibleCards);
       this.scrollAmount = Math.min(this.scrollAmount, maxScrollAmount);
       const newPosition = this.scrollAmount * (this.cardWidth + this.cardMargin * 2);
-      this.shoppingContainer.nativeElement.scrollTo({
-        left: newPosition,
-        behavior: 'auto' // Change to 'smooth' if you prefer smooth scrolling
-      });
+      this.shoppingContainer.nativeElement.scrollLeft = newPosition;
     }
   }
 
   setInitialVisibleCards(): void {
-    if (this.shoppingContainer.nativeElement.offsetWidth > 600 || this.shoppingContainer.nativeElement.offsetWidth < 667) {
+    if (this.shoppingContainer.nativeElement.offsetWidth >= 300 && this.shoppingContainer.nativeElement.offsetWidth <= 360) {
+      this.visibleCards = 1;
+    } else if (this.shoppingContainer.nativeElement.offsetWidth >=361 && this.shoppingContainer.nativeElement.offsetWidth <= 544) {
+      this.visibleCards = 1.5;
+    } else if (this.shoppingContainer.nativeElement.offsetWidth >=545 && this.shoppingContainer.nativeElement.offsetWidth <= 686) {
       this.visibleCards = 2;
-    } else if (this.shoppingContainer.nativeElement.offsetWidth > 668 || this.shoppingContainer.nativeElement.offsetWidth < 990) {
+    
+    } else if (this.shoppingContainer.nativeElement.offsetWidth >=687 && this.shoppingContainer.nativeElement.offsetWidth <= 860) {
+      this.visibleCards = 2.5;
+    } else if (this.shoppingContainer.nativeElement.offsetWidth >=861 && this.shoppingContainer.nativeElement.offsetWidth <= 1014) {
       this.visibleCards = 3;
-    } else if (this.shoppingContainer.nativeElement.offsetWidth > 991 || this.shoppingContainer.nativeElement.offsetWidth < 1300) {
+    } else if (this.shoppingContainer.nativeElement.offsetWidth >=1015 && this.shoppingContainer.nativeElement.offsetWidth <= 1180) {
+      this.visibleCards = 3.5;
+    } else if (this.shoppingContainer.nativeElement.offsetWidth >=1181) {
       this.visibleCards = 4;
     } 
-
-    console.log('this.visibleCards: ' + this.visibleCards);
   }
 
   nextScroll(): void {
     console.log("this.visibleCards"+this.visibleCards)
-    if (this.shoppingContainer.nativeElement) {
+    if (this.shoppingContainer.nativeElement instanceof HTMLElement) {
       if (this.scrollAmount < this.totalCards - this.visibleCards) {
         this.scrollAmount++;
         this.scrollToCurrentPosition();
@@ -173,7 +184,7 @@ export class CardSliderComponent {
   }
 
   preScroll(): void {
-    if (this.shoppingContainer.nativeElement) {
+    if (this.shoppingContainer.nativeElement instanceof HTMLElement) {
       if (this.scrollAmount > 0) {
         this.scrollAmount--;
         this.scrollToCurrentPosition();

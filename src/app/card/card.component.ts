@@ -1,5 +1,5 @@
 import { AfterViewInit, Component, ElementRef, EventEmitter, Output } from '@angular/core';
-import { CardData } from '../card-items-slider/card-items-slider.component';
+import { CardData } from '../card-slider/card-slider.component';
 
 @Component({
   selector: 'app-card',
