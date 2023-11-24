@@ -9,21 +9,30 @@
 </head>
 
 <body>
-   
+
     <section>
         <app-navebar></app-navebar>
     </section>
-    
+
     <section class="hero">
         <app-hero-carousel></app-hero-carousel>
-        </section>
-   
-    <section class="category-items"  >
-       <app-card-carousel></app-card-carousel>
+    </section>
+
+    <section class="category-items">
+        <app-card-carousel></app-card-carousel>
     </section>
     <section class="featured-products">
-        <app-category-card-list  (cardClicked)="onCardClicked($event)"></app-category-card-list>
-    
+        <button (click)=" cardSendToChild()"> Send Card To Child</button>&nbsp;
+        <button (click)=" cardSendToChildReset()"> Reset</button>
+        <ng-container *ngIf="newCardList !== undefined && newCardList.length!==0; else noDataBlock">
+            <app-category-card-list [newCardListFromParent]="newCardList"
+                (cardClicked)="onCardClicked($event)"></app-category-card-list>
+        </ng-container>
+        <ng-template #noDataBlock>
+            <app-category-card-list (cardClicked)="onCardClicked($event)"></app-category-card-list>
+        </ng-template>
+
+
     </section>
 
     <section class="deals">
@@ -71,12 +80,8 @@
     </section>
 
     <!-- Add your JavaScript scripts here -->
+    <router-outlet></router-outlet>
 
 </body>
 
 </html>
-
-
-<router-outlet>
-
-</router-outlet>

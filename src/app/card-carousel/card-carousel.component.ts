@@ -1,6 +1,5 @@
 import { ChangeDetectorRef, Component, ElementRef, EventEmitter, HostListener, Output, ViewChild } from '@angular/core';
 export interface CardData {
-  id?: number;
   imageSrc: string;
   title: string;
   price: string;
@@ -15,6 +14,7 @@ export interface CardData {
 export class CardCarouselComponent{
   title = 'card-sliding';
   @ViewChild('shoppingContainer') shoppingContainer!: ElementRef;
+  @Output() newItemEvent = new EventEmitter<CardData>();
   cardDataArray = [
     {
       imageSrc: 'assets/Image/Green-tea (5).jpg',
@@ -205,6 +205,8 @@ export class CardCarouselComponent{
     alert("Card");
 
   }
+  rout(){
 
+  }
   
 }

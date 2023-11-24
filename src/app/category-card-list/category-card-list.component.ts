@@ -1,12 +1,13 @@
-import { AfterViewInit, Component, EventEmitter, Output } from '@angular/core';
+import { AfterViewInit, Component, EventEmitter, Input, Output } from '@angular/core';
 export interface CardData {
-  id?: number;
   imageSrc: string;
   title: string;
+  description: string;
   price: string;
   stars: number;
   location: string;
 }
+
 @Component({
   selector: 'app-category-card-list',
   templateUrl: './category-card-list.component.html',
@@ -15,9 +16,8 @@ export interface CardData {
 export class CategoryCardListComponent implements AfterViewInit {
   [x: string]: any;
   @Output() cardClicked: EventEmitter<CardData> = new EventEmitter<CardData>();
-
-
-  cardDataArray = [
+  @Input() newCardListFromParent?:CardData[];
+  cardDataArray?:CardData[] = [
     {
       imageSrc: 'assets/Image/Green-tea (5).jpg',
       title: 'Green-Tea',
@@ -178,20 +178,27 @@ export class CategoryCardListComponent implements AfterViewInit {
       stars: 2,
       location: 'India, Westbengal,Siliguri,734011'
     },
-
   ];
   ngAfterViewInit(): void {
+    this.cardReset();
+  }
+  ngOnInit() {
   }
   onCardClick(event: MouseEvent, cardData: CardData, index: number) {
-    
-    this.cardClicked.emit(cardData);
-    alert("Card");
-
+        this.cardClicked.emit(cardData);
+  }
+  cardReset(){
+    if (this.newCardListFromParent === undefined || this.newCardListFromParent.length===0) {
+    }
+    else{
+      this.cardDataArray = [];
+      this.cardDataArray=this.newCardListFromParent;
+    }
+   
   }
   AddCard(event: Event) {
     event.stopPropagation();
-    alert("Add Card");
-  }
+     }
 
 }
 

@@ -1,7 +1,6 @@
 <h1>All Category</h1>
 
 <div class="cards-container">
-
     <div class="card" *ngFor="let cardData of cardDataArray; let i = index" (click)="onCardClick($event, cardData, i)">
       <div class="card-content" >
         <div class="card-img ">
@@ -20,6 +19,6 @@
       </div>
     </div>
     <div>
-
     </div>
   </div>
+  <router-outlet></router-outlet>

@@ -8,6 +8,13 @@ import { NavebarComponent } from './navebar/navebar.component';
 import { HeroCarouselComponent } from './hero-carousel/hero-carousel.component';
 import { CardCarouselComponent } from './card-carousel/card-carousel.component';
 import { CategoryCardListComponent } from './category-card-list/category-card-list.component';
+import { Routes } from '@angular/router';
+
+const appRouts: Routes = [
+  { path: '', component: AppComponent },
+  { path: 'category', component: CategoryCardListComponent },
+]
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,9 +29,9 @@ import { CategoryCardListComponent } from './category-card-list/category-card-li
     AppRoutingModule
   ],
   providers: [],
-    bootstrap: [AppComponent ]
-    // bootstrap: [CardCarouselComponent ]
-    // bootstrap: [SitemapComponent ]
+  bootstrap: [AppComponent]
+  // bootstrap: [CardCarouselComponent ]
+  // bootstrap: [SitemapComponent ]
   // bootstrap: [CardItemsSliderComponent ]
   // bootstrap: [ImageSliderComponent ]
   // bootstrap: [CardComponent ] 
