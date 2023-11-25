@@ -11,7 +11,7 @@
 <body>
 
     <section>
-        <app-navebar></app-navebar>
+        <app-navebar [myCard]="myCard"></app-navebar>
     </section>
 
     <section class="hero">
@@ -19,17 +19,15 @@
     </section>
 
     <section class="category-items">
-        <app-card-carousel></app-card-carousel>
+        <app-card-carousel (categoryCardClicked)="onCategoryClicked($event)"></app-card-carousel>
     </section>
     <section class="featured-products">
-        <button (click)=" cardSendToChild()"> Send Card To Child</button>&nbsp;
-        <button (click)=" cardSendToChildReset()"> Reset</button>
-        <ng-container *ngIf="newCardList !== undefined && newCardList.length!==0; else noDataBlock">
-            <app-category-card-list [newCardListFromParent]="newCardList"
-                (cardClicked)="onCardClicked($event)"></app-category-card-list>
+        <ng-container *ngIf="requestCard !== undefined && requestCard.length!==0; else noDataBlock">
+            <app-category-card-list [requestCard]="requestCard"
+                (cardClicked)="onCardClicked($event)" (addCardClicked)="addToMyCard($event)"></app-category-card-list>
         </ng-container>
         <ng-template #noDataBlock>
-            <app-category-card-list (cardClicked)="onCardClicked($event)"></app-category-card-list>
+            <app-category-card-list (cardClicked)="onCardClicked($event)" (addCardClicked)="addToMyCard($event)"></app-category-card-list>
         </ng-template>
 
 

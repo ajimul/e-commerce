@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-navebar',
@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
 })
 export class NavebarComponent {
   isLoginn: boolean = false;
+  @Input() myCard?: number;
   totalCard: number = 0;
   loginn() {
     console.log("click")
@@ -16,5 +17,16 @@ export class NavebarComponent {
     else {
       this.isLoginn = true;
     }
+  }
+   
+  myCardList() {
+    if (this.myCard === undefined || this.myCard===0) {
+    }
+    else{
+      this.totalCard+=this.myCard;
+    }
+  }
+  ngOnChanges() {
+    this.myCardList();
   }
 }

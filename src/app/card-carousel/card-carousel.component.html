@@ -1,23 +1,22 @@
 <section>
     <h1>All Top Categories Tea deals</h1>
-    <a routerLink="category"><button [routerLinkActive]="'active'" (click)="rout()">Rout</button></a>
             <div class="cards-container" #shoppingContainer>
-                <div class="card" *ngFor="let cardData of cardDataArray; let i = index"
-                    (click)="onCardClick($event, cardData, i)">
+                <div class="card" *ngFor="let cl of cardList; let i = index"
+                    (click)="onCardClick($event, cl, i)">
                     <div class="card-content">
                         <div class="card-title ">
-                            <h2>{{ cardData.title }}</h2>
+                            <h2>{{ cl.title }}</h2>
                         </div>
                         <div class="card-img ">
-                            <img [src]="cardData.imageSrc" alt="Comming Soon!">
+                            <img [src]="cl.imageSrc" alt="Comming Soon!">
                         </div>
 
-                        <div class="card-description color">{{cardData.description}}</div>
-                        <!-- <div class="card-price ">₹{{cardData.price}}</div> -->
+                        <div class="card-description color">{{cl.description}}</div>
+                        <!-- <div class="card-price ">₹{{cl.price}}</div> -->
                         <!-- <div class="card-rating ">
-                <i class="fa-solid fa-star"*ngFor="let _ of [].constructor(cardData.stars).fill(0); let i = index"></i>
+                <i class="fa-solid fa-star"*ngFor="let _ of [].constructor(cl.stars).fill(0); let i = index"></i>
               </div> -->
-                        <div class="card-location ">{{ cardData.location }}</div>
+                        <div class="card-location ">{{ cl.location }}</div>
                         <!-- <button class="card-btn">Add to Cart</button> -->
                     </div>
                 </div>

@@ -1,5 +1,6 @@
-import { AfterViewInit, Component, EventEmitter, Input, Output } from '@angular/core';
-export interface CardData {
+import { ChangeDetectionStrategy } from '@angular/compiler';
+import { AfterViewInit, ChangeDetectorRef, Component, EventEmitter, Input, NgZone, Output } from '@angular/core';
+export interface CardList {
   imageSrc: string;
   title: string;
   description: string;
@@ -14,13 +15,14 @@ export interface CardData {
   styleUrls: ['./category-card-list.component.css']
 })
 export class CategoryCardListComponent implements AfterViewInit {
-  [x: string]: any;
-  @Output() cardClicked: EventEmitter<CardData> = new EventEmitter<CardData>();
-  @Input() newCardListFromParent?:CardData[];
-  cardDataArray?:CardData[] = [
+  @Output() cardClicked: EventEmitter<CardList> = new EventEmitter<CardList>();
+  @Output() addCardClicked: EventEmitter<CardList> = new EventEmitter<CardList>();
+  @Input() requestCard?: CardList[];
+  cardListTitle: string = 'All Category';
+  cardList?: CardList[] = [
     {
       imageSrc: 'assets/Image/Green-tea (5).jpg',
-      title: 'Green-Tea',
+      title: 'Darjeeling-Tea',
       description: 'A refreshing, antioxidant-rich beverage with a light, earthy flavor. Known for promoting wellness and boosting metabolism.',
       price: '10/kg',
       stars: 4,
@@ -36,7 +38,7 @@ export class CategoryCardListComponent implements AfterViewInit {
     },
     {
       imageSrc: 'assets/Image/Green-tea (5).jpg',
-      title: 'Green-Tea',
+      title: 'Darjeeling-Tea',
       description: 'A refreshing, antioxidant-rich beverage with a light, earthy flavor. Known for promoting wellness and boosting metabolism.',
       price: '15/kg',
       stars: 6,
@@ -52,7 +54,7 @@ export class CategoryCardListComponent implements AfterViewInit {
     },
     {
       imageSrc: 'assets/Image/Darjeeling-tea (1).jpg',
-      title: 'Green-Tea',
+      title: 'Darjeeling-Tea',
       description: 'A refreshing, antioxidant-rich beverage with a light, earthy flavor. Known for promoting wellness and boosting metabolism.',
       price: '10/kg',
       stars: 4,
@@ -68,7 +70,7 @@ export class CategoryCardListComponent implements AfterViewInit {
     },
     {
       imageSrc: 'assets/Image/Darjeeling-tea (3).jpg',
-      title: 'Green-Tea',
+      title: 'Darjeeling-Tea',
       description: 'A refreshing, antioxidant-rich beverage with a light, earthy flavor. Known for promoting wellness and boosting metabolism.',
       price: '15/kg',
       stars: 6,
@@ -179,26 +181,33 @@ export class CategoryCardListComponent implements AfterViewInit {
       location: 'India, Westbengal,Siliguri,734011'
     },
   ];
+  constructor(private cd: ChangeDetectorRef, private zone: NgZone) {
+  }
   ngAfterViewInit(): void {
-    this.cardReset();
+    this.cd.detectChanges();
   }
   ngOnInit() {
   }
-  onCardClick(event: MouseEvent, cardData: CardData, index: number) {
-        this.cardClicked.emit(cardData);
-  }
-  cardReset(){
-    if (this.newCardListFromParent === undefined || this.newCardListFromParent.length===0) {
+
+  cardReset() {
+    if (this.requestCard === undefined || this.requestCard.length === 0) {
     }
-    else{
-      this.cardDataArray = [];
-      this.cardDataArray=this.newCardListFromParent;
+    else {
+      this.cardList = [];
+      this.cardListTitle = this.requestCard[0].title;
+      this.cardList = this.requestCard;
     }
-   
   }
-  AddCard(event: Event) {
+  ngOnChanges() {
+    this.cardReset();
+  }
+  viewCard(event: MouseEvent, CardList: CardList, index: number) {
+    this.cardClicked.emit(CardList);
+  }
+  addCard(event: Event, CardList: CardList) {
     event.stopPropagation();
-     }
+    this.addCardClicked.emit(CardList);
+  }
 
 }
 

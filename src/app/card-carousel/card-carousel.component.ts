@@ -1,7 +1,8 @@
 import { ChangeDetectorRef, Component, ElementRef, EventEmitter, HostListener, Output, ViewChild } from '@angular/core';
-export interface CardData {
+export interface CardList {
   imageSrc: string;
   title: string;
+  description: string;
   price: string;
   stars: number;
   location: string;
@@ -14,11 +15,11 @@ export interface CardData {
 export class CardCarouselComponent{
   title = 'card-sliding';
   @ViewChild('shoppingContainer') shoppingContainer!: ElementRef;
-  @Output() newItemEvent = new EventEmitter<CardData>();
-  cardDataArray = [
+  @Output() categoryCardClicked: EventEmitter<CardList> = new EventEmitter<CardList>();
+   cardList = [
     {
       imageSrc: 'assets/Image/Green-tea (5).jpg',
-      title: 'Green-Tea 1',
+      title: 'Darjeeling-Tea',
       description: 'Shop now',
       price: '10/kg',
       stars: 4,
@@ -26,7 +27,7 @@ export class CardCarouselComponent{
     },
     {
       imageSrc: 'assets/Image/Green-tea (12).jpg',
-      title: 'Green-Tea 2',
+      title: 'Green-Tea',
       description: 'Shop now',
       price: '',
       stars: 3,
@@ -34,7 +35,7 @@ export class CardCarouselComponent{
     },
     {
       imageSrc: 'assets/Image/Green-tea (3).jpg',
-      title: 'Green-Tea 3',
+      title: 'Darjeeling-Tea',
       description: 'Shop now',
       price: '',
       stars: 6,
@@ -42,7 +43,7 @@ export class CardCarouselComponent{
     },
     {
       imageSrc: 'assets/Image/Darjeeling-tea (1).jpg',
-      title: 'Green-Tea 4',
+      title: 'Green-Tea',
       description: 'Shop now',
       price: '',
       stars: 2,
@@ -50,7 +51,7 @@ export class CardCarouselComponent{
     },
     {
       imageSrc: 'assets/Image/Green-tea (4).jpg',
-      title: 'Green-Tea 5',
+      title: 'Darjeeling-Tea',
       description: 'Shop now',
       price: '',
       stars: 2,
@@ -58,7 +59,7 @@ export class CardCarouselComponent{
     },
     {
       imageSrc: 'assets/Image/Darjeeling-tea (1).jpg',
-      title: 'Green-Tea 6',
+      title: 'Green-Tea',
       description: 'Shop now',
       price: '',
       stars: 2,
@@ -66,7 +67,7 @@ export class CardCarouselComponent{
     },
     {
       imageSrc: 'assets/Image/Green-tea (4).jpg',
-      title: 'Green-Tea 7',
+      title: 'Darjeeling-Tea',
       description: 'Shop now',
       price: '',
       stars: 2,
@@ -74,7 +75,7 @@ export class CardCarouselComponent{
     },
     {
       imageSrc: 'assets/Image/Darjeeling-tea (1).jpg',
-      title: 'Green-Tea 8',
+      title: 'Green-Tea',
       description: 'Shop now',
       price: '',
       stars: 2,
@@ -82,7 +83,7 @@ export class CardCarouselComponent{
     },
     {
       imageSrc: 'assets/Image/Green-tea (4).jpg',
-      title: 'Green-Tea 9',
+      title: 'Darjeeling-Tea',
       description: 'Shop now',
       price: '',
       stars: 2,
@@ -90,7 +91,7 @@ export class CardCarouselComponent{
     },
     {
       imageSrc: 'assets/Image/Darjeeling-tea (1).jpg',
-      title: 'Green-Tea 10',
+      title: 'Green-Tea',
       description: 'Shop now',
       price: '',
       stars: 2,
@@ -105,9 +106,9 @@ export class CardCarouselComponent{
   scrollAmount = 0;
   cardWidth = 0;
   cardMargin = 15; // Adjust margin as needed
-  totalCards = this.cardDataArray.length; // Adjust based on the actual number of cards
+  totalCards = this.cardList.length; // Adjust based on the actual number of cards
   visibleCards = 4; // Adjust based on the number of cards you want to show
-  @Output() cardClicked: EventEmitter<CardData> = new EventEmitter<CardData>();
+ 
  
   constructor(private cdr: ChangeDetectorRef) {}
 
@@ -199,14 +200,11 @@ export class CardCarouselComponent{
   isPrevDisabled(): boolean {
     return this.scrollAmount <= 0;
   }
-  onCardClick(event: MouseEvent, cardData: CardData, index: number) {
+  onCardClick(event: MouseEvent, CardList: CardList, index: number) {
     
-    this.cardClicked.emit(cardData);
-    alert("Card");
+    this.categoryCardClicked.emit(CardList);
 
   }
-  rout(){
-
-  }
+  
   
 }
