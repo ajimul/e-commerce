@@ -1,5 +1,4 @@
-import { ChangeDetectorRef, Component, ElementRef, EventEmitter, Input, NgZone, Output, Renderer2, ViewChild } from '@angular/core';
-import Swiper from 'swiper';
+import {  Component} from '@angular/core';
 export interface CardList {
   imageSrc: string;
   title: string;
@@ -8,7 +7,6 @@ export interface CardList {
   stars: number;
   location: string;
 }
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -16,158 +14,10 @@ export interface CardList {
 })
 export class AppComponent {
   title = 'e-commerce';
-  requestCard?: CardList[];
   myCard?: number = 0;
-  cardList: CardList[] = [
-    {
-      imageSrc: 'assets/Image/Green-tea (12).jpg',
-      title: 'Green-Tea',
-      description: 'A refreshing, antioxidant-rich beverage with a light, earthy flavor. Known for promoting wellness and boosting metabolism.',
-      price: '10/kg',
-      stars: 4,
-      location: 'India, Westbengal,Siliguri,734011'
-    },
-    {
-      imageSrc: 'assets/Image/Green-tea (12).jpg',
-      title: 'Green-Tea',
-      description: 'A refreshing, antioxidant-rich beverage with a light, earthy flavor. Known for promoting wellness and boosting metabolism.',
-      price: '15/kg',
-      stars: 3,
-      location: 'India, Westbengal,Siliguri,734011'
-    },
-    {
-      imageSrc: 'assets/Image/Green-tea (12).jpg',
-      title: 'Green-Tea',
-      description: 'A refreshing, antioxidant-rich beverage with a light, earthy flavor. Known for promoting wellness and boosting metabolism.',
-      price: '15/kg',
-      stars: 6,
-      location: 'India, Westbengal,Siliguri,734011'
-    },
-    {
-      imageSrc: 'assets/Image/Green-tea (12).jpg',
-      title: 'Green-Tea',
-      description: 'A refreshing, antioxidant-rich beverage with a light, earthy flavor. Known for promoting wellness and boosting metabolism.',
-      price: '15/kg',
-      stars: 2,
-      location: 'India, Westbengal,Siliguri,734011'
-    }, {
-      imageSrc: 'assets/Image/Green-tea (5).jpg',
-      title: 'Darjeeling-Tea',
-      description: 'Shop now',
-      price: '10/kg',
-      stars: 4,
-      location: ''
-    },
-    {
-      imageSrc: 'assets/Image/Green-tea (12).jpg',
-      title: 'Green-Tea',
-      description: 'Shop now',
-      price: '10/kg',
-      stars: 3,
-      location: ''
-    },
-    {
-      imageSrc: 'assets/Image/Green-tea (3).jpg',
-      title: 'Darjeeling-Tea',
-      description: 'Shop now',
-      price: '10/kg',
-      stars: 6,
-      location: ''
-    },
-    {
-      imageSrc: 'assets/Image/Darjeeling-tea (1).jpg',
-      title: 'Green-Tea',
-      description: 'Shop now',
-      price: '10/kg',
-      stars: 2,
-      location: ''
-    },
-    {
-      imageSrc: 'assets/Image/Green-tea (4).jpg',
-      title: 'Darjeeling-Tea',
-      description: 'Shop now',
-      price: '10/kg',
-      stars: 2,
-      location: ''
-    },
-    {
-      imageSrc: 'assets/Image/Darjeeling-tea (1).jpg',
-      title: 'Green-Tea',
-      description: 'Shop now',
-      price: '10/kg',
-      stars: 2,
-      location: ''
-    },
-    {
-      imageSrc: 'assets/Image/Green-tea (4).jpg',
-      title: 'Darjeeling-Tea',
-      description: 'Shop now',
-      price: '10/kg',
-      stars: 2,
-      location: ''
-    },
-    {
-      imageSrc: 'assets/Image/Darjeeling-tea (1).jpg',
-      title: 'Green-Tea',
-      description: 'Shop now',
-      price: '10/kg',
-      stars: 2,
-      location: ''
-    },
-    {
-      imageSrc: 'assets/Image/Green-tea (4).jpg',
-      title: 'Darjeeling-Tea',
-      description: 'Shop now',
-      price: '10/kg',
-      stars: 2,
-      location: ''
-    },
-    {
-      imageSrc: 'assets/Image/Darjeeling-tea (1).jpg',
-      title: 'Green-Tea',
-      description: 'Shop now',
-      price: '10/kg',
-      stars: 2,
-      location: ''
-    },
-
-
-  ];
-  constructor(private cd: ChangeDetectorRef,private zone: NgZone) {
-
-  }
-
-
-  onCardClicked(CardList: CardList) {
-  }
-  onCategoryClicked(getCard: CardList) {
-    
-    this.requestCard = [];
-    this.cardList.forEach(e => {
-      if (e.title === getCard.title) {
-        this.requestCard?.push({
-          imageSrc: e.imageSrc,
-          title: e.title,
-          description: e.description,
-          price: e.price,
-          stars: e.stars,
-          location: e.location
-        })
-      }
-    });
-    this.requestCard.forEach(e => {
-      console.log(e.title)
-    });
-   
-  }
   addToMyCard(CardList: CardList) {
     this.myCard = CardList.stars;
   }
   ngOnInit() {
   }
-  ngAfterInit() {
-    // this.onCategoryClicked();
-    this.cd.detectChanges();
-  }
-
 }

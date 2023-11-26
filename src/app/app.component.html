@@ -13,12 +13,16 @@
     <section>
         <app-navebar [myCard]="myCard"></app-navebar>
     </section>
+    <main>
+        <app-page-content (addCardClicked)="addToMyCard($event)"></app-page-content>
 
-    <section class="hero">
+
+
+
+    <!-- <section class="hero">
         <app-hero-carousel></app-hero-carousel>
     </section>
-
-    <section class="category-items">
+        <section class="category-items">
         <app-card-carousel (categoryCardClicked)="onCategoryClicked($event)"></app-card-carousel>
     </section>
     <section class="featured-products">
@@ -29,44 +33,9 @@
         <ng-template #noDataBlock>
             <app-category-card-list (cardClicked)="onCardClicked($event)" (addCardClicked)="addToMyCard($event)"></app-category-card-list>
         </ng-template>
-
-
-    </section>
-
-    <section class="deals">
-        <!-- Deals and promotions content goes here -->
-        <!-- <p>deals</p> -->
-    </section>
-
-    <section class="reviews">
-        <!-- Customer reviews/testimonials content goes here -->
-        <!-- <p>reviews</p> -->
-    </section>
-
-    <section class="search-filter">
-        <!-- Product search and filtering options go here -->
-        <!-- <p>search-filter</p> -->
-    </section>
-
-    <section class="brands">
-        <!-- Featured brands content goes here -->
-        <!-- <p>brands</p> -->
-    </section>
-
-    <section class="shopping-guides">
-        <!-- Shopping guides or blog content goes here -->
-        <!-- <p>shopping-guides</p> -->
-    </section>
-
-    <section class="newsletter">
-        <!-- Newsletter signup form goes here -->
-        <!-- <p>newsletter</p> -->
-    </section>
-
-    <section class="social-media">
-        <!-- Social media links go here -->
-        <!-- <p>social-media</p> -->
-    </section>
+    </section> -->
+    <router-outlet></router-outlet>
+</main>
 
     <footer><br><br>
         <app-sitemap></app-sitemap>
@@ -78,8 +47,7 @@
     </section>
 
     <!-- Add your JavaScript scripts here -->
-    <router-outlet></router-outlet>
-
+    
 </body>
 
 </html>

@@ -1,0 +1,22 @@
+<section>
+    <!-- <app-navebar [myCard]="myCard"></app-navebar> -->
+</section>
+
+<section class="hero">
+    <app-hero-carousel></app-hero-carousel>
+</section>
+<!-- <app-page-content></app-page-content> -->
+
+<section class="category-items">
+    <app-card-carousel (categoryCardClicked)="onCategoryClicked($event)"></app-card-carousel>
+</section>
+<section class="featured-products">
+    <ng-container *ngIf="requestCard !== undefined && requestCard.length!==0; else noDataBlock">
+        <app-category-card-list [requestCard]="requestCard"
+            (cardClicked)="onCardClicked($event)" (addCardClicked)="addToMyCard($event)"></app-category-card-list>
+    </ng-container>
+    <ng-template #noDataBlock>
+        <app-category-card-list (cardClicked)="onCardClicked($event)" (addCardClicked)="addToMyCard($event)"></app-category-card-list>
+    </ng-template>
+</section>
+<router-outlet></router-outlet>

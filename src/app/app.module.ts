@@ -9,6 +9,7 @@ import { HeroCarouselComponent } from './hero-carousel/hero-carousel.component';
 import { CardCarouselComponent } from './card-carousel/card-carousel.component';
 import { CategoryCardListComponent } from './category-card-list/category-card-list.component';
 import { Routes } from '@angular/router';
+import { PageContentComponent } from './page-content/page-content.component';
 
 const appRouts: Routes = [
   { path: '', component: AppComponent },
@@ -22,7 +23,8 @@ const appRouts: Routes = [
     NavebarComponent,
     HeroCarouselComponent,
     CardCarouselComponent,
-    CategoryCardListComponent
+    CategoryCardListComponent,
+    PageContentComponent
   ],
   imports: [
     BrowserModule,
@@ -30,6 +32,7 @@ const appRouts: Routes = [
   ],
   providers: [],
   bootstrap: [AppComponent]
+  // bootstrap: [PageContentComponent]
   // bootstrap: [CardCarouselComponent ]
   // bootstrap: [SitemapComponent ]
   // bootstrap: [CardItemsSliderComponent ]

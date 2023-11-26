@@ -17,13 +17,13 @@ export class NavebarComponent {
     else {
       this.isLoginn = true;
     }
-  }
-   
+  }   
   myCardList() {
     if (this.myCard === undefined || this.myCard===0) {
     }
     else{
-      this.totalCard+=this.myCard;
+      // implementation code required for myCard history as card id, card location,amount ...etc
+      this.totalCard+=1;
     }
   }
   ngOnChanges() {

@@ -184,7 +184,7 @@ export class CategoryCardListComponent implements AfterViewInit {
   constructor(private cd: ChangeDetectorRef, private zone: NgZone) {
   }
   ngAfterViewInit(): void {
-    this.cd.detectChanges();
+    // this.cd.detectChanges();
   }
   ngOnInit() {
   }
@@ -205,8 +205,9 @@ export class CategoryCardListComponent implements AfterViewInit {
     this.cardClicked.emit(CardList);
   }
   addCard(event: Event, CardList: CardList) {
-    event.stopPropagation();
+      event.stopPropagation();//to skip click effect parent child, only effect on child  
     this.addCardClicked.emit(CardList);
+    
   }
 
 }
