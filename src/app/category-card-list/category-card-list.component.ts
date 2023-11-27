@@ -1,13 +1,9 @@
 import { ChangeDetectionStrategy } from '@angular/compiler';
 import { AfterViewInit, ChangeDetectorRef, Component, EventEmitter, Input, NgZone, Output } from '@angular/core';
-export interface CardList {
-  imageSrc: string;
-  title: string;
-  description: string;
-  price: string;
-  stars: number;
-  location: string;
-}
+import { Router } from '@angular/router';
+import { DataSharingService } from '../data-sharing.service';
+import { CardList } from '../shared-interface/shared-interface.module';
+
 
 @Component({
   selector: 'app-category-card-list',
@@ -181,7 +177,7 @@ export class CategoryCardListComponent implements AfterViewInit {
       location: 'India, Westbengal,Siliguri,734011'
     },
   ];
-  constructor(private cd: ChangeDetectorRef, private zone: NgZone) {
+  constructor(private cd: ChangeDetectorRef, private dataSharingService: DataSharingService, private route: Router) {
   }
   ngAfterViewInit(): void {
     // this.cd.detectChanges();
@@ -202,12 +198,11 @@ export class CategoryCardListComponent implements AfterViewInit {
     this.cardReset();
   }
   viewCard(event: MouseEvent, CardList: CardList, index: number) {
-    this.cardClicked.emit(CardList);
+    this.route.navigate(['home/cardview'], { skipLocationChange: true });
   }
   addCard(event: Event, CardList: CardList) {
-      event.stopPropagation();//to skip click effect parent child, only effect on child  
-    this.addCardClicked.emit(CardList);
-    
+    event.stopPropagation();//to skip click effect parent child, only effect on child  
+    this.dataSharingService.setData(CardList);
   }
 
 }

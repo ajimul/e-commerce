@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { DataSharingService } from '../data-sharing.service';
 
 @Component({
   selector: 'app-navebar',
@@ -7,8 +8,9 @@ import { Component, Input } from '@angular/core';
 })
 export class NavebarComponent {
   isLoginn: boolean = false;
-  @Input() myCard?: number;
-  totalCard: number = 0;
+  // @Input() myCard?: number;
+  myCard: number = 0;
+  constructor(private dataSharingService: DataSharingService) {}
   loginn() {
     console.log("click")
     if (this.isLoginn) {
@@ -18,15 +20,11 @@ export class NavebarComponent {
       this.isLoginn = true;
     }
   }   
-  myCardList() {
-    if (this.myCard === undefined || this.myCard===0) {
-    }
-    else{
-      // implementation code required for myCard history as card id, card location,amount ...etc
-      this.totalCard+=1;
-    }
-  }
-  ngOnChanges() {
-    this.myCardList();
+
+  ngOnInit() {
+    this.dataSharingService.data$.subscribe(data => {
+      // this.myCard += data.stars;
+      this.myCard += 1;
+    });
   }
 }

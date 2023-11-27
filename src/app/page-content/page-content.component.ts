@@ -1,12 +1,7 @@
 import { ChangeDetectorRef, Component, EventEmitter, Output } from '@angular/core';
-export interface CardList {
-  imageSrc: string;
-  title: string;
-  description: string;
-  price: string;
-  stars: number;
-  location: string;
-}
+import { CardList } from '../shared-interface/shared-interface.module';
+
+
 @Component({
   selector: 'app-page-content',
   templateUrl: './page-content.component.html',

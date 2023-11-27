@@ -8,13 +8,28 @@ import { NavebarComponent } from './navebar/navebar.component';
 import { HeroCarouselComponent } from './hero-carousel/hero-carousel.component';
 import { CardCarouselComponent } from './card-carousel/card-carousel.component';
 import { CategoryCardListComponent } from './category-card-list/category-card-list.component';
-import { Routes } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { PageContentComponent } from './page-content/page-content.component';
+import { CardViewComponent } from './card-view/card-view.component';
+import { HomePageComponent } from './home-page/home-page.component';
+import { SharedInterfaceModule } from './shared-interface/shared-interface.module';
 
 const appRouts: Routes = [
-  { path: '', component: AppComponent },
-  { path: 'category', component: CategoryCardListComponent },
-]
+  { 
+    path: '', 
+    redirectTo: '/home',
+    pathMatch: 'full'
+  },
+  {
+    path: 'home', 
+    component: HomePageComponent,
+    children: [
+      { path: '', component: PageContentComponent }, // empty path makes it the default with HomePageComponent
+      { path: 'page-content', component: PageContentComponent }, //its optional because Page Content Component as default allowed with HomePageComponent may in future required
+      { path: 'cardview', component: CardViewComponent },
+    ]
+  },
+];
 
 @NgModule({
   declarations: [
@@ -24,11 +39,15 @@ const appRouts: Routes = [
     HeroCarouselComponent,
     CardCarouselComponent,
     CategoryCardListComponent,
-    PageContentComponent
+    PageContentComponent,
+    CardViewComponent,
+    HomePageComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    SharedInterfaceModule,
+    RouterModule.forRoot(appRouts)
   ],
   providers: [],
   bootstrap: [AppComponent]

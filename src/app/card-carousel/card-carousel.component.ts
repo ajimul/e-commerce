@@ -1,12 +1,6 @@
 import { ChangeDetectorRef, Component, ElementRef, EventEmitter, HostListener, Output, ViewChild } from '@angular/core';
-export interface CardList {
-  imageSrc: string;
-  title: string;
-  description: string;
-  price: string;
-  stars: number;
-  location: string;
-}
+import { CardList } from '../shared-interface/shared-interface.module';
+
 @Component({
   selector: 'app-card-carousel',
   templateUrl: './card-carousel.component.html',
