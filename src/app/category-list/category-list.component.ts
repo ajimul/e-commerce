@@ -1,20 +1,24 @@
 import { ChangeDetectionStrategy } from '@angular/compiler';
 import { AfterViewInit, ChangeDetectorRef, Component, EventEmitter, Input, NgZone, Output } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { DataSharingService } from '../data-sharing.service';
 import { CardList } from '../shared-interface/shared-interface.module';
+import { JsonPipe } from '@angular/common';
+import { first } from 'rxjs/operators';
+import { take } from 'rxjs/operators';
 
 
 @Component({
-  selector: 'app-category-card-list',
-  templateUrl: './category-card-list.component.html',
-  styleUrls: ['./category-card-list.component.css']
+  selector: 'app-category-list',
+  templateUrl: './category-list.component.html',
+  styleUrls: ['./category-list.component.css']
 })
-export class CategoryCardListComponent implements AfterViewInit {
+export class CategoryCardListComponent  {
   @Output() cardClicked: EventEmitter<CardList> = new EventEmitter<CardList>();
   @Output() addCardClicked: EventEmitter<CardList> = new EventEmitter<CardList>();
   @Input() requestCard?: CardList[];
   cardListTitle: string = 'All Category';
+  categoryDetails: number = 10;
   cardList?: CardList[] = [
     {
       imageSrc: 'assets/Image/Green-tea (5).jpg',
@@ -177,14 +181,11 @@ export class CategoryCardListComponent implements AfterViewInit {
       location: 'India, Westbengal,Siliguri,734011'
     },
   ];
-  constructor(private cd: ChangeDetectorRef, private dataSharingService: DataSharingService, private route: Router) {
+  constructor(
+    private cd: ChangeDetectorRef,
+    private dataSharingService: DataSharingService,
+    private route: Router) {
   }
-  ngAfterViewInit(): void {
-    // this.cd.detectChanges();
-  }
-  ngOnInit() {
-  }
-
   cardReset() {
     if (this.requestCard === undefined || this.requestCard.length === 0) {
     }
@@ -198,11 +199,17 @@ export class CategoryCardListComponent implements AfterViewInit {
     this.cardReset();
   }
   viewCard(event: MouseEvent, CardList: CardList, index: number) {
-    this.route.navigate(['home/cardview'], { skipLocationChange: true });
+    this.route.navigate(['home/category-details'], { skipLocationChange: true });
+
+    this.dataSharingService.setCategoryDetails(CardList);
   }
-  addCard(event: Event, CardList: CardList) {
+
+
+
+  addCard(event: Event, cardList: CardList) {
     event.stopPropagation();//to skip click effect parent child, only effect on child  
-    this.dataSharingService.setData(CardList);
+    this.dataSharingService.setMyCardDetails([cardList]);
+
   }
 
 }

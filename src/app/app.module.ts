@@ -6,13 +6,14 @@ import { AppComponent } from './app.component';
 import { SitemapComponent } from './sitemap/sitemap.component';
 import { NavebarComponent } from './navebar/navebar.component';
 import { HeroCarouselComponent } from './hero-carousel/hero-carousel.component';
-import { CardCarouselComponent } from './card-carousel/card-carousel.component';
-import { CategoryCardListComponent } from './category-card-list/category-card-list.component';
+import { CategoryCardListComponent } from './category-list/category-list.component';
 import { RouterModule, Routes } from '@angular/router';
 import { PageContentComponent } from './page-content/page-content.component';
-import { CardViewComponent } from './card-view/card-view.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { SharedInterfaceModule } from './shared-interface/shared-interface.module';
+import { MyCardViewComponent } from './my-card-view/my-card-view.component';
+import { ProductListComponent } from './product-list/product-list.component';
+import { CategoryDetailsComponent } from './category-details/category-details.component';
 
 const appRouts: Routes = [
   { 
@@ -26,7 +27,8 @@ const appRouts: Routes = [
     children: [
       { path: '', component: PageContentComponent }, // empty path makes it the default with HomePageComponent
       { path: 'page-content', component: PageContentComponent }, //its optional because Page Content Component as default allowed with HomePageComponent may in future required
-      { path: 'cardview', component: CardViewComponent },
+      { path: 'category-details', component: CategoryDetailsComponent },
+      { path: 'my-card-view', component: MyCardViewComponent },
     ]
   },
 ];
@@ -37,11 +39,12 @@ const appRouts: Routes = [
     SitemapComponent,
     NavebarComponent,
     HeroCarouselComponent,
-    CardCarouselComponent,
     CategoryCardListComponent,
     PageContentComponent,
-    CardViewComponent,
-    HomePageComponent
+    HomePageComponent,
+    MyCardViewComponent,
+    ProductListComponent,
+    CategoryDetailsComponent
   ],
   imports: [
     BrowserModule,

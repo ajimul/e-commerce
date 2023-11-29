@@ -8,14 +8,14 @@
 <!-- <app-page-content></app-page-content> -->
 
 <section class="category-items">
-    <app-card-carousel (categoryCardClicked)="onCategoryClicked($event)"></app-card-carousel>
+    <app-product-list (categoryCardClicked)="onCategoryClicked($event)"></app-product-list>
 </section>
 <section class="featured-products">
     <ng-container *ngIf="requestCard !== undefined && requestCard.length!==0; else noDataBlock">
-        <app-category-card-list [requestCard]="requestCard"
-            (cardClicked)="onCardClicked($event)" (addCardClicked)="addToMyCard($event)"></app-category-card-list>
+        <app-category-list [requestCard]="requestCard"
+            (cardClicked)="onCardClicked($event)" (addCardClicked)="addToMyCard($event)"></app-category-list>
     </ng-container>
     <ng-template #noDataBlock>
-        <app-category-card-list (cardClicked)="onCardClicked($event)" (addCardClicked)="addToMyCard($event)"></app-category-card-list>
+        <app-category-list (cardClicked)="onCardClicked($event)" (addCardClicked)="addToMyCard($event)"></app-category-list>
     </ng-template>
 </section>

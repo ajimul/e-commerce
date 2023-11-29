@@ -2,11 +2,11 @@ import { ChangeDetectorRef, Component, ElementRef, EventEmitter, HostListener, O
 import { CardList } from '../shared-interface/shared-interface.module';
 
 @Component({
-  selector: 'app-card-carousel',
-  templateUrl: './card-carousel.component.html',
-  styleUrls: ['./card-carousel.component.css']
+  selector: 'app-product-list',
+  templateUrl: './product-list.component.html',
+  styleUrls: ['./product-list.component.css']
 })
-export class CardCarouselComponent{
+export class ProductListComponent {
   title = 'card-sliding';
   @ViewChild('shoppingContainer') shoppingContainer!: ElementRef;
   @Output() categoryCardClicked: EventEmitter<CardList> = new EventEmitter<CardList>();
