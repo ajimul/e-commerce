@@ -1,11 +1,10 @@
 import { ChangeDetectionStrategy } from '@angular/compiler';
 import { AfterViewInit, ChangeDetectorRef, Component, EventEmitter, Input, NgZone, Output } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { DataSharingService } from '../data-sharing.service';
-import { CardList } from '../shared-interface/shared-interface.module';
-import { JsonPipe } from '@angular/common';
-import { first } from 'rxjs/operators';
-import { take } from 'rxjs/operators';
+import { CardList } from '../interfaces/CardList';
+import { CategoryDetailsService } from '../shared/category-details.service';
+import { MyCardListService } from '../shared/my-card-list.service';
+
 
 
 @Component({
@@ -183,7 +182,8 @@ export class CategoryCardListComponent  {
   ];
   constructor(
     private cd: ChangeDetectorRef,
-    private dataSharingService: DataSharingService,
+    private categoryDetailsService: CategoryDetailsService,
+    private myCardListService: MyCardListService,
     private route: Router) {
   }
   cardReset() {
@@ -198,17 +198,13 @@ export class CategoryCardListComponent  {
   ngOnChanges() {
     this.cardReset();
   }
-  viewCard(event: MouseEvent, CardList: CardList, index: number) {
+  viewCard(event: MouseEvent, cardList: CardList, index: number) {
     this.route.navigate(['home/category-details'], { skipLocationChange: true });
-
-    this.dataSharingService.setCategoryDetails(CardList);
+    this.categoryDetailsService.setCategoryDetails(cardList);
   }
-
-
-
   addCard(event: Event, cardList: CardList) {
     event.stopPropagation();//to skip click effect parent child, only effect on child  
-    this.dataSharingService.setMyCardDetails([cardList]);
+    this.myCardListService.setMyCardList([cardList]);
 
   }
 

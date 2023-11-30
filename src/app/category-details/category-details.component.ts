@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { CardList } from '../shared-interface/shared-interface.module';
-import { DataSharingService } from '../data-sharing.service';
+import { CardList } from '../interfaces/CardList';
+
 import { ActivatedRoute } from '@angular/router';
+import { CategoryDetailsService } from '../shared/category-details.service';
 
 @Component({
   selector: 'app-category-details',
@@ -11,7 +12,7 @@ import { ActivatedRoute } from '@angular/router';
 export class CategoryDetailsComponent {
    categoryDetails: CardList[] = []; 
 
-  constructor(private dataSharingService: DataSharingService) {}
+  constructor(private dataSharingService: CategoryDetailsService) {}
 
   addCard(event: Event, cardData: CardList) {
   }

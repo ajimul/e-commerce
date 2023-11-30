@@ -1,5 +1,6 @@
 import { ChangeDetectorRef, Component, EventEmitter, Output } from '@angular/core';
-import { CardList } from '../shared-interface/shared-interface.module';
+import { CardList } from '../interfaces/CardList';
+
 
 
 @Component({

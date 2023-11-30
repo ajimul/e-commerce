@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { CardList } from '../shared-interface/shared-interface.module';
-import { DataSharingService } from '../data-sharing.service';
+import { CardList } from '../interfaces/CardList';
+import { MyCardListService } from '../shared/my-card-list.service';
+
 
 @Component({
   selector: 'app-my-card-view',
@@ -8,17 +9,17 @@ import { DataSharingService } from '../data-sharing.service';
   styleUrls: ['./my-card-view.component.css']
 })
 export class MyCardViewComponent {
-  myCardDetails: CardList[] = [];
-  constructor(private dataSharingService: DataSharingService) { }
+  myCardList: CardList[] = [];
+  constructor(private myCardListService: MyCardListService) { }
 
   buyNow(event: Event, cardData: CardList) {
     event.stopPropagation(); // to skip click effect parent child, only effect on child
   }
   ngOnInit() {
-    this.dataSharingService.myCardDetailsData$.subscribe(data => {
+    this.myCardListService.myCardListData$.subscribe(data => {
      
       if (data) {
-        this.myCardDetails = data;
+        this.myCardList = data;
       }
     });
   }

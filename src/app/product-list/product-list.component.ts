@@ -1,5 +1,5 @@
 import { ChangeDetectorRef, Component, ElementRef, EventEmitter, HostListener, Output, ViewChild } from '@angular/core';
-import { CardList } from '../shared-interface/shared-interface.module';
+import { CardList } from '../interfaces/CardList';
 
 @Component({
   selector: 'app-product-list',

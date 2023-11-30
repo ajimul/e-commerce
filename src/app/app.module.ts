@@ -10,19 +10,23 @@ import { CategoryCardListComponent } from './category-list/category-list.compone
 import { RouterModule, Routes } from '@angular/router';
 import { PageContentComponent } from './page-content/page-content.component';
 import { HomePageComponent } from './home-page/home-page.component';
-import { SharedInterfaceModule } from './shared-interface/shared-interface.module';
 import { MyCardViewComponent } from './my-card-view/my-card-view.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { CategoryDetailsComponent } from './category-details/category-details.component';
+import { NumberInputDirective } from './directives/number-input.directive';
+import { MyCardListService } from './shared/my-card-list.service';
+import { CategoryListService } from './shared/category-list.service';
+import { CategoryDetailsService } from './shared/category-details.service';
+import { ProductListService } from './shared/product-list.service';
 
 const appRouts: Routes = [
-  { 
-    path: '', 
+  {
+    path: '',
     redirectTo: '/home',
     pathMatch: 'full'
   },
   {
-    path: 'home', 
+    path: 'home',
     component: HomePageComponent,
     children: [
       { path: '', component: PageContentComponent }, // empty path makes it the default with HomePageComponent
@@ -44,15 +48,16 @@ const appRouts: Routes = [
     HomePageComponent,
     MyCardViewComponent,
     ProductListComponent,
-    CategoryDetailsComponent
+    CategoryDetailsComponent,
+    NumberInputDirective,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    SharedInterfaceModule,
+
     RouterModule.forRoot(appRouts)
   ],
-  providers: [],
+  providers: [MyCardListService, CategoryListService, CategoryDetailsService, ProductListService],
   bootstrap: [AppComponent]
   // bootstrap: [PageContentComponent]
   // bootstrap: [CardCarouselComponent ]
