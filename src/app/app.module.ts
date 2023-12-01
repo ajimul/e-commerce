@@ -18,6 +18,7 @@ import { MyCardListService } from './shared/my-card-list.service';
 import { CategoryListService } from './shared/category-list.service';
 import { CategoryDetailsService } from './shared/category-details.service';
 import { ProductListService } from './shared/product-list.service';
+import { CardCheckoutComponent } from './card-checkout/card-checkout.component';
 
 const appRouts: Routes = [
   {
@@ -50,6 +51,7 @@ const appRouts: Routes = [
     ProductListComponent,
     CategoryDetailsComponent,
     NumberInputDirective,
+    CardCheckoutComponent,
   ],
   imports: [
     BrowserModule,
@@ -59,6 +61,7 @@ const appRouts: Routes = [
   ],
   providers: [MyCardListService, CategoryListService, CategoryDetailsService, ProductListService],
   bootstrap: [AppComponent]
+  // bootstrap: [CardCheckoutComponent]
   // bootstrap: [PageContentComponent]
   // bootstrap: [CardCarouselComponent ]
   // bootstrap: [SitemapComponent ]
