@@ -8,15 +8,72 @@
 
 }
 
-.card {
-    border: 1px solid #000000;
-    border-radius: 8px;
+
+.card,
+.card-header,
+.card-footer {
+    border-bottom: 0.5px solid #dbdbdb;
     margin-inline: 30px;
     padding: 10px;
     display: flex;
     gap: 5px;
-    width: 100%;
+    width: 90%;
     overflow-wrap: break-word;
+}
+
+.card-header>div:nth-child(1) {
+    width: 100%;
+}
+
+.card-header>div:nth-child(1) h1 {
+    padding-block: 20px;
+    margin-inline: 20px;
+    font-size: 1.8rem;
+}
+
+.card-header>div:nth-child(2) {
+    display: flex;
+    width: 100%;
+    padding-block: 20px;
+    margin-inline: 20px;
+    justify-content: flex-end;
+}
+
+.card-footer>div:nth-child(1) {
+    display: flex;
+    width: 100%;
+    padding-block: 20px;
+    margin-inline: 20px;
+    justify-content: flex-start;
+}
+
+.card-footer>div:nth-child(1) button {
+    display: block;
+    padding: 10px;
+    /* background-color: #e44d26; */
+    /* background-color: rgb(119, 192, 2); */
+    background-color: rgb(254, 220, 0);
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    color: black;
+    font-size: 1.2rem;
+}
+
+.card-footer>div:nth-child(1) button:hover {
+    cursor: pointer;
+    border: solid 0.5px rgb(184, 182, 182);
+}
+.card-footer>div:nth-child(2) {
+    display: flex;
+    width: 100%;
+    padding-block: 20px;
+    margin-inline: 20px;
+    justify-content: flex-end;
 }
 
 
@@ -24,11 +81,16 @@
     width: 100%;
 }
 
-.card-image {
-    width: 300px;
-    height: 200px;
-    margin-right: 10px;
-    object-fit: cover;
+.card-img  {
+    display: block;
+    margin: 5px;
+}
+.img {
+  width: 200px;
+  height: 200px;
+}
+.img:hover {
+cursor: pointer;
 }
 
 .card-details {
@@ -46,7 +108,10 @@
     text-align: center;
     gap: 10px;
     column-gap: 0px;
+    padding: 5px;
 }
+
+
 
 .card-info {
     display: flex;
@@ -86,6 +151,18 @@
     align-items: center;
     border-radius: 10px;
 }
+.qty-action:hover {
+    cursor: pointer;
+    border: solid 0.5px rgb(184, 182, 182);
+}
+.price:hover {
+    cursor: pointer;
+    border: solid 0.5px rgb(184, 182, 182);
+    border-radius: 5px;
+}
+.price label,input:hover {
+    cursor: pointer;
+}
 
 .qty-action>div {
     display: flex;
@@ -112,6 +189,7 @@
     border-radius: 10px;
     height: 100%;
     background-color: rgb(255, 255, 255);
+    color: red;
 }
 
 .delete-action>div {
@@ -119,6 +197,12 @@
     flex-direction: column;
     margin-left: 10px;
     margin-right: 10px;
+}
+.delete-action:hover {
+   
+    cursor: pointer;
+    border: solid 0.5px rgb(184, 182, 182);
+  
 }
 
 
@@ -131,13 +215,10 @@
 .card-info {
     flex: 1;
 }
-
+.card-delete:hover{
+   cursor: pointer;
+}
 
 
 @media screen and (min-width: 300px)and (max-width: 600px) {
-    /* .card-details {
-        display: flex;
-        flex-wrap: wrap;
-    } */
-
-}
+    }

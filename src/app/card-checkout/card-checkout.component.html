@@ -1,7 +1,17 @@
 <body>
     <div class="checkout-container">
-        <div class="card">
-            <img class="card-image" src="assets/Image/Green-tea (11).jpg" alt="Product 1 Image">
+        <div class="card-header">
+            <div>
+                <h1>Card Checkout!</h1>
+            </div>
+            <div class="header-price">
+                <h2>Price &nbsp;Subtotal (1 Item):   ₹999.00</h2>
+            </div>
+        </div>
+        <div class="card" *ngFor="let cardData of myCardList; let i = index">
+            <div class="card-image">
+                <img class="img" [src]="cardData.imageSrc" alt="Comming Soon!" (click)="viewCard($event, cardData)">
+            </div>
             <div>
                 <div class="card-details">
                     <div class="card-info">
@@ -12,368 +22,36 @@
                         <p class="stock-availability">Stock Available: 10</p>
                     </div>
                     <div class="price"><label for="">
-                            <strong>$999999999999999&nbsp;&nbsp;</strong> <input type="checkbox"></label>
+                            <strong>₹999.00&nbsp;&nbsp;</strong> <input type="checkbox"></label>
                     </div>
                 </div><br>
-                <hr>
                 <div class="card-action">
                     <div>
                         <div class="qty-action">
                             Qty:&nbsp;&nbsp;1&nbsp;&nbsp;
                             <div>
-                                <i class="fa-solid fa-caret-up fa-3xl qty-up" id=""></i>
+                                <i class="fa-solid fa-caret-up fa-3xl qty-up" ></i>
                                 <i class="fa-solid fa-caret-down fa-3xl qty-down"></i>
                             </div>
                         </div>
                         <div class="delete-action">&nbsp;&nbsp;
-                            <div>
-                                <i class="fa-solid fa-trash-can fa-lg" style="border: none;color: red;"></i>
+                            <div >
+                                <i class="fa-solid fa-trash-can fa-lg " ></i>
                             </div>&nbsp;&nbsp;
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="card">
-            <img class="card-image" src="assets/Image/Green-tea (11).jpg" alt="Product 1 Image">
+        <div class="card-footer">
             <div>
-                <div class="card-details">
-                    <div class="card-info">
-                        <p><strong>Product 1</strong></p>
-                        <p class="product-description">Green tea is a refreshing beverage known for its rich
-                            antioxidants and potential health benefits. Derived from Camellia sinensis leaves, it offers
-                            a delicate flavor and is celebrated for promoting overall well-being.
-                        <p class="stock-availability">Stock Available: 10</p>
-                    </div>
-                    <div class="price"><label for="">
-                            <strong>$999999999999999&nbsp;&nbsp;</strong> <input type="checkbox"></label>
-                    </div>
-                </div><br>
-                <hr>
-                <div class="card-action">
-                    <div>
-                        <div class="qty-action">
-                            Qty:&nbsp;&nbsp;1&nbsp;&nbsp;
-                            <div>
-                                <i class="fa-solid fa-caret-up fa-3xl qty-up" id=""></i>
-                                <i class="fa-solid fa-caret-down fa-3xl qty-down"></i>
-                            </div>
-                        </div>
-                        <div class="delete-action">&nbsp;&nbsp;
-                            <div>
-                                <i class="fa-solid fa-trash-can fa-lg" style="border: none;color: red;"></i>
-                            </div>&nbsp;&nbsp;
-                        </div>
-                    </div>
-                </div>
+                <button>Proceed to Checkout</button>
+            </div>
+            <div class="footer-price" >
+                <h2>Price &nbsp;Subtotal (1 Item):   ₹999.00</h2>
             </div>
         </div>
-        <div class="card">
-            <img class="card-image" src="assets/Image/Green-tea (11).jpg" alt="Product 1 Image">
-            <div>
-                <div class="card-details">
-                    <div class="card-info">
-                        <p><strong>Product 1</strong></p>
-                        <p class="product-description">Green tea is a refreshing beverage known for its rich
-                            antioxidants and potential health benefits. Derived from Camellia sinensis leaves, it offers
-                            a delicate flavor and is celebrated for promoting overall well-being.
-                        <p class="stock-availability">Stock Available: 10</p>
-                    </div>
-                    <div class="price"><label for="">
-                            <strong>$999999999999999&nbsp;&nbsp;</strong> <input type="checkbox"></label>
-                    </div>
-                </div><br>
-                <hr>
-                <div class="card-action">
-                    <div>
-                        <div class="qty-action">
-                            Qty:&nbsp;&nbsp;1&nbsp;&nbsp;
-                            <div>
-                                <i class="fa-solid fa-caret-up fa-3xl qty-up" id=""></i>
-                                <i class="fa-solid fa-caret-down fa-3xl qty-down"></i>
-                            </div>
-                        </div>
-                        <div class="delete-action">&nbsp;&nbsp;
-                            <div>
-                                <i class="fa-solid fa-trash-can fa-lg" style="border: none;color: red;"></i>
-                            </div>&nbsp;&nbsp;
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="card">
-            <img class="card-image" src="assets/Image/Green-tea (11).jpg" alt="Product 1 Image">
-            <div>
-                <div class="card-details">
-                    <div class="card-info">
-                        <p><strong>Product 1</strong></p>
-                        <p class="product-description">Green tea is a refreshing beverage known for its rich
-                            antioxidants and potential health benefits. Derived from Camellia sinensis leaves, it offers
-                            a delicate flavor and is celebrated for promoting overall well-being.
-                        <p class="stock-availability">Stock Available: 10</p>
-                    </div>
-                    <div class="price"><label for="">
-                            <strong>$999999999999999&nbsp;&nbsp;</strong> <input type="checkbox"></label>
-                    </div>
-                </div><br>
-                <hr>
-                <div class="card-action">
-                    <div>
-                        <div class="qty-action">
-                            Qty:&nbsp;&nbsp;1&nbsp;&nbsp;
-                            <div>
-                                <i class="fa-solid fa-caret-up fa-3xl qty-up" id=""></i>
-                                <i class="fa-solid fa-caret-down fa-3xl qty-down"></i>
-                            </div>
-                        </div>
-                        <div class="delete-action">&nbsp;&nbsp;
-                            <div>
-                                <i class="fa-solid fa-trash-can fa-lg" style="border: none;color: red;"></i>
-                            </div>&nbsp;&nbsp;
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="card">
-            <img class="card-image" src="assets/Image/Green-tea (11).jpg" alt="Product 1 Image">
-            <div>
-                <div class="card-details">
-                    <div class="card-info">
-                        <p><strong>Product 1</strong></p>
-                        <p class="product-description">Green tea is a refreshing beverage known for its rich
-                            antioxidants and potential health benefits. Derived from Camellia sinensis leaves, it offers
-                            a delicate flavor and is celebrated for promoting overall well-being.
-                        <p class="stock-availability">Stock Available: 10</p>
-                    </div>
-                    <div class="price"><label for="">
-                            <strong>$999999999999999&nbsp;&nbsp;</strong> <input type="checkbox"></label>
-                    </div>
-                </div><br>
-                <hr>
-                <div class="card-action">
-                    <div>
-                        <div class="qty-action">
-                            Qty:&nbsp;&nbsp;1&nbsp;&nbsp;
-                            <div>
-                                <i class="fa-solid fa-caret-up fa-3xl qty-up" id=""></i>
-                                <i class="fa-solid fa-caret-down fa-3xl qty-down"></i>
-                            </div>
-                        </div>
-                        <div class="delete-action">&nbsp;&nbsp;
-                            <div>
-                                <i class="fa-solid fa-trash-can fa-lg" style="border: none;color: red;"></i>
-                            </div>&nbsp;&nbsp;
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="card">
-            <img class="card-image" src="assets/Image/Green-tea (11).jpg" alt="Product 1 Image">
-            <div>
-                <div class="card-details">
-                    <div class="card-info">
-                        <p><strong>Product 1</strong></p>
-                        <p class="product-description">Green tea is a refreshing beverage known for its rich
-                            antioxidants and potential health benefits. Derived from Camellia sinensis leaves, it offers
-                            a delicate flavor and is celebrated for promoting overall well-being.
-                        <p class="stock-availability">Stock Available: 10</p>
-                    </div>
-                    <div class="price"><label for="">
-                            <strong>$999999999999999&nbsp;&nbsp;</strong> <input type="checkbox"></label>
-                    </div>
-                </div><br>
-                <hr>
-                <div class="card-action">
-                    <div>
-                        <div class="qty-action">
-                            Qty:&nbsp;&nbsp;1&nbsp;&nbsp;
-                            <div>
-                                <i class="fa-solid fa-caret-up fa-3xl qty-up" id=""></i>
-                                <i class="fa-solid fa-caret-down fa-3xl qty-down"></i>
-                            </div>
-                        </div>
-                        <div class="delete-action">&nbsp;&nbsp;
-                            <div>
-                                <i class="fa-solid fa-trash-can fa-lg" style="border: none;color: red;"></i>
-                            </div>&nbsp;&nbsp;
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="card">
-            <img class="card-image" src="assets/Image/Green-tea (11).jpg" alt="Product 1 Image">
-            <div>
-                <div class="card-details">
-                    <div class="card-info">
-                        <p><strong>Product 1</strong></p>
-                        <p class="product-description">Green tea is a refreshing beverage known for its rich
-                            antioxidants and potential health benefits. Derived from Camellia sinensis leaves, it offers
-                            a delicate flavor and is celebrated for promoting overall well-being.
-                        <p class="stock-availability">Stock Available: 10</p>
-                    </div>
-                    <div class="price"><label for="">
-                            <strong>$999999999999999&nbsp;&nbsp;</strong> <input type="checkbox"></label>
-                    </div>
-                </div><br>
-                <hr>
-                <div class="card-action">
-                    <div>
-                        <div class="qty-action">
-                            Qty:&nbsp;&nbsp;1&nbsp;&nbsp;
-                            <div>
-                                <i class="fa-solid fa-caret-up fa-3xl qty-up" id=""></i>
-                                <i class="fa-solid fa-caret-down fa-3xl qty-down"></i>
-                            </div>
-                        </div>
-                        <div class="delete-action">&nbsp;&nbsp;
-                            <div>
-                                <i class="fa-solid fa-trash-can fa-lg" style="border: none;color: red;"></i>
-                            </div>&nbsp;&nbsp;
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="card">
-            <img class="card-image" src="assets/Image/Green-tea (11).jpg" alt="Product 1 Image">
-            <div>
-                <div class="card-details">
-                    <div class="card-info">
-                        <p><strong>Product 1</strong></p>
-                        <p class="product-description">Green tea is a refreshing beverage known for its rich
-                            antioxidants and potential health benefits. Derived from Camellia sinensis leaves, it offers
-                            a delicate flavor and is celebrated for promoting overall well-being.
-                        <p class="stock-availability">Stock Available: 10</p>
-                    </div>
-                    <div class="price"><label for="">
-                            <strong>$999999999999999&nbsp;&nbsp;</strong> <input type="checkbox"></label>
-                    </div>
-                </div><br>
-                <hr>
-                <div class="card-action">
-                    <div>
-                        <div class="qty-action">
-                            Qty:&nbsp;&nbsp;1&nbsp;&nbsp;
-                            <div>
-                                <i class="fa-solid fa-caret-up fa-3xl qty-up" id=""></i>
-                                <i class="fa-solid fa-caret-down fa-3xl qty-down"></i>
-                            </div>
-                        </div>
-                        <div class="delete-action">&nbsp;&nbsp;
-                            <div>
-                                <i class="fa-solid fa-trash-can fa-lg" style="border: none;color: red;"></i>
-                            </div>&nbsp;&nbsp;
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="card">
-            <img class="card-image" src="assets/Image/Green-tea (11).jpg" alt="Product 1 Image">
-            <div>
-                <div class="card-details">
-                    <div class="card-info">
-                        <p><strong>Product 1</strong></p>
-                        <p class="product-description">Green tea is a refreshing beverage known for its rich
-                            antioxidants and potential health benefits. Derived from Camellia sinensis leaves, it offers
-                            a delicate flavor and is celebrated for promoting overall well-being.
-                        <p class="stock-availability">Stock Available: 10</p>
-                    </div>
-                    <div class="price"><label for="">
-                            <strong>$999999999999999&nbsp;&nbsp;</strong> <input type="checkbox"></label>
-                    </div>
-                </div><br>
-                <hr>
-                <div class="card-action">
-                    <div>
-                        <div class="qty-action">
-                            Qty:&nbsp;&nbsp;1&nbsp;&nbsp;
-                            <div>
-                                <i class="fa-solid fa-caret-up fa-3xl qty-up" id=""></i>
-                                <i class="fa-solid fa-caret-down fa-3xl qty-down"></i>
-                            </div>
-                        </div>
-                        <div class="delete-action">&nbsp;&nbsp;
-                            <div>
-                                <i class="fa-solid fa-trash-can fa-lg" style="border: none;color: red;"></i>
-                            </div>&nbsp;&nbsp;
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="card">
-            <img class="card-image" src="assets/Image/Green-tea (11).jpg" alt="Product 1 Image">
-            <div>
-                <div class="card-details">
-                    <div class="card-info">
-                        <p><strong>Product 1</strong></p>
-                        <p class="product-description">Green tea is a refreshing beverage known for its rich
-                            antioxidants and potential health benefits. Derived from Camellia sinensis leaves, it offers
-                            a delicate flavor and is celebrated for promoting overall well-being.
-                        <p class="stock-availability">Stock Available: 10</p>
-                    </div>
-                    <div class="price"><label for="">
-                            <strong>$999999999999999&nbsp;&nbsp;</strong> <input type="checkbox"></label>
-                    </div>
-                </div><br>
-                <hr>
-                <div class="card-action">
-                    <div>
-                        <div class="qty-action">
-                            Qty:&nbsp;&nbsp;1&nbsp;&nbsp;
-                            <div>
-                                <i class="fa-solid fa-caret-up fa-3xl qty-up" id=""></i>
-                                <i class="fa-solid fa-caret-down fa-3xl qty-down"></i>
-                            </div>
-                        </div>
-                        <div class="delete-action">&nbsp;&nbsp;
-                            <div>
-                                <i class="fa-solid fa-trash-can fa-lg" style="border: none;color: red;"></i>
-                            </div>&nbsp;&nbsp;
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="card">
-            <img class="card-image" src="assets/Image/Green-tea (11).jpg" alt="Product 1 Image">
-            <div>
-                <div class="card-details">
-                    <div class="card-info">
-                        <p><strong>Product 1</strong></p>
-                        <p class="product-description">Green tea is a refreshing beverage known for its rich
-                            antioxidants and potential health benefits. Derived from Camellia sinensis leaves, it offers
-                            a delicate flavor and is celebrated for promoting overall well-being.
-                        <p class="stock-availability">Stock Available: 10</p>
-                    </div>
-                    <div class="price"><label for="">
-                            <strong>$999999999999999&nbsp;&nbsp;</strong> <input type="checkbox"></label>
-                    </div>
-                </div><br>
-                <hr>
-                <div class="card-action">
-                    <div>
-                        <div class="qty-action">
-                            Qty:&nbsp;&nbsp;1&nbsp;&nbsp;
-                            <div>
-                                <i class="fa-solid fa-caret-up fa-3xl qty-up" id=""></i>
-                                <i class="fa-solid fa-caret-down fa-3xl qty-down"></i>
-                            </div>
-                        </div>
-                        <div class="delete-action">&nbsp;&nbsp;
-                            <div>
-                                <i class="fa-solid fa-trash-can fa-lg" style="border: none;color: red;"></i>
-                            </div>&nbsp;&nbsp;
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+
     </div>
 
 

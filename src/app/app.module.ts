@@ -10,7 +10,6 @@ import { CategoryCardListComponent } from './category-list/category-list.compone
 import { RouterModule, Routes } from '@angular/router';
 import { PageContentComponent } from './page-content/page-content.component';
 import { HomePageComponent } from './home-page/home-page.component';
-import { MyCardViewComponent } from './my-card-view/my-card-view.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { CategoryDetailsComponent } from './category-details/category-details.component';
 import { NumberInputDirective } from './directives/number-input.directive';
@@ -33,7 +32,7 @@ const appRouts: Routes = [
       { path: '', component: PageContentComponent }, // empty path makes it the default with HomePageComponent
       { path: 'page-content', component: PageContentComponent }, //its optional because Page Content Component as default allowed with HomePageComponent may in future required
       { path: 'category-details', component: CategoryDetailsComponent },
-      { path: 'my-card-view', component: MyCardViewComponent },
+      { path: 'card-checkout', component: CardCheckoutComponent },
     ]
   },
 ];
@@ -47,7 +46,6 @@ const appRouts: Routes = [
     CategoryCardListComponent,
     PageContentComponent,
     HomePageComponent,
-    MyCardViewComponent,
     ProductListComponent,
     CategoryDetailsComponent,
     NumberInputDirective,
@@ -69,5 +67,6 @@ const appRouts: Routes = [
   // bootstrap: [ImageSliderComponent ]
   // bootstrap: [CardComponent ] 
   // bootstrap: [CardSliderComponent ] 
+  // bootstrap: [CategoryDetailsComponent ] 
 })
 export class AppModule { }

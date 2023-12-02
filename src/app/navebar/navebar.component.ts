@@ -30,7 +30,7 @@ export class NavebarComponent {
 
   }
   myCardView() {
-    this.route.navigate(['home/my-card-view'], { skipLocationChange: true });
+    this.route.navigate(['home/card-checkout'], { skipLocationChange: true });
   }
   ngOnChange() {
 
