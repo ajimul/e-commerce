@@ -14,10 +14,10 @@ import { ProductListComponent } from './product-list/product-list.component';
 import { CategoryDetailsComponent } from './category-details/category-details.component';
 import { NumberInputDirective } from './directives/number-input.directive';
 import { MyCardListService } from './shared/my-card-list.service';
-import { CategoryListService } from './shared/category-list.service';
 import { CategoryDetailsService } from './shared/category-details.service';
-import { ProductListService } from './shared/product-list.service';
 import { CardCheckoutComponent } from './card-checkout/card-checkout.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ApiService } from './api-service/ApiService';
 
 const appRouts: Routes = [
   {
@@ -54,10 +54,10 @@ const appRouts: Routes = [
   imports: [
     BrowserModule,
     AppRoutingModule,
-
+    HttpClientModule,
     RouterModule.forRoot(appRouts)
   ],
-  providers: [MyCardListService, CategoryListService, CategoryDetailsService, ProductListService],
+  providers: [MyCardListService,  CategoryDetailsService,ApiService],
   bootstrap: [AppComponent]
   // bootstrap: [CardCheckoutComponent]
   // bootstrap: [PageContentComponent]

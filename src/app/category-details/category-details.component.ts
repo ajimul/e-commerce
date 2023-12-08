@@ -1,9 +1,7 @@
 import { Component, ElementRef, HostListener, QueryList, ViewChild, ViewChildren } from '@angular/core';
-import { CardList } from '../interfaces/CardList';
-
-import { ActivatedRoute } from '@angular/router';
 import { CategoryDetailsService } from '../shared/category-details.service';
 import { MyCardListService } from '../shared/my-card-list.service';
+import { CategoryDetails, CategoryDetailsImgSrc } from '../interfaces/share-interface';
 
 @Component({
   selector: 'app-category-details',
@@ -11,73 +9,62 @@ import { MyCardListService } from '../shared/my-card-list.service';
   styleUrls: ['./category-details.component.css']
 })
 export class CategoryDetailsComponent {
-   categoryDetails: CardList[] = [    {
-    imageSrc: 'assets/Image/Green-tea (12).jpg',
-    title: 'Green-Tea',
-    description: 'A refreshing, antioxidant-rich beverage with a light, earthy flavor. Known for promoting wellness and boosting metabolism.',
-    price: '15/kg',
-    stars: 2,
-    location: 'India, Westbengal,Siliguri,734011'
-  }]; 
+  categoryDetails: CategoryDetails[] = [];
+  basePath: string = "assets/Image/";
+  @ViewChild('slider') sliderx: ElementRef | undefined;
+  @ViewChildren('.indicators div') indicators: QueryList<ElementRef> | undefined;
 
+  categoryDetailsImgSrc: CategoryDetailsImgSrc[] = [];
   constructor(private dataSharingService: CategoryDetailsService,
-    private myCardListService: MyCardListService) {}
+    private myCardListService: MyCardListService) { }
   addCard(event: Event) {
     event.stopPropagation();//to skip click effect parent child, only effect on child  
     this.myCardListService.setMyCardList(this.categoryDetails);
 
   }
   ngOnInit() {
-      this.dataSharingService.categoryDetailsData$.subscribe((data: CardList) => {
+    this.dataSharingService.categoryDetailsData$.subscribe((data: CategoryDetails) => {
       if (data) {
         this.categoryDetails = [data];
       }
     });
     this.startSlider();
+    this.categoryDetailsImgSrc = [];
+    this.categoryDetails.forEach(element => {
+      element.categoryDetailsImgSrc?.forEach(e2 => {
+        this.categoryDetailsImgSrc.push({
+          cDetailsImgSrcId: e2.cDetailsImgSrcId,
+          cDetailsImgSrc: e2.cDetailsImgSrc,
+          cDetailsRef: e2.cDetailsRef
+        }
+        );
+      });
+    });
   }
-
-
-
-  @ViewChild('slider') sliderx: ElementRef | undefined;
-  @ViewChildren('.indicators div') indicators: QueryList<ElementRef> | undefined;
-  images = [
-    { src: 'assets/Image/Green-tea (1).jpg', alt: 'Image 1' },
-    { src: 'assets/Image/Green-tea (2).jpg', alt: 'Image 2' },
-    { src: 'assets/Image/Green-tea (11).jpg', alt: 'Image 3' },
-    { src: 'assets/Image/Green-tea (7).jpg', alt: 'Image 4' },
-    // { src: 'assets/Image/Green-tea (5).jpg', alt: 'Image 5' },
-    // { src: 'assets/Image/Green-tea (10).jpg', alt: 'Image 6' },
-  ];
-
   counter = 0;
   isDragging = false;
   dragStartX: number = 0;
   dragEndX: number = 0;
-
- 
-
-  startSlider() { 
+  startSlider() {
     // setInterval(() => { this.nextSlide(); }); // Change slide every 3 seconds, adjust as needed
   }
 
   nextSlide() {
     this.counter++;
-    if (this.counter === this.images.length) {
+    if (this.counter === this.categoryDetailsImgSrc.length) {
       this.counter = 0;
-     
     }
   }
 
   prevSlide() {
     this.counter--;
     if (this.counter < 0) {
-      this.counter = this.images.length - 1;
+      this.counter = this.categoryDetailsImgSrc.length - 1;
     }
   }
-
   goToSlide(index: number) {
     this.counter = index;
-  
+
     if (this.indicators && this.indicators.length > index) {
       const indicatorElement = this.indicators.toArray()[index].nativeElement as HTMLElement;
       indicatorElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
@@ -92,7 +79,7 @@ export class CategoryDetailsComponent {
 
   @HostListener('document:mouseup', ['$event'])
   onMouseUp(event: MouseEvent) {
-     if (this.isDragging) {
+    if (this.isDragging) {
       this.dragEndX = event.clientX;
       this.handleDrag();
       this.isDragging = false;
@@ -101,16 +88,16 @@ export class CategoryDetailsComponent {
 
   @HostListener('document:mousemove', ['$event'])
   onMouseMove(event: MouseEvent) {
-   
+
     if (this.isDragging) {
-     this.dragEndX = event.clientX;
+      this.dragEndX = event.clientX;
       this.handleDrag();
     }
   }
 
   private handleDrag() {
     const dragDistance = this.dragEndX - this.dragStartX;
-    const slideWidth = 100 / this.images.length;
+    const slideWidth = 100 / this.categoryDetailsImgSrc.length;
     const dragPercentage = (dragDistance / window.innerWidth) * 100;
 
     if (dragPercentage > 10) {
@@ -122,6 +109,6 @@ export class CategoryDetailsComponent {
     this.dragStartX = this.dragEndX;
   }
 
-  
+
 
 }

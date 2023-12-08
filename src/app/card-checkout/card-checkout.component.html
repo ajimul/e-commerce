@@ -10,7 +10,7 @@
         </div>
         <div class="card" *ngFor="let cardData of myCardList; let i = index">
             <div class="card-image">
-                <img class="img" [src]="cardData.imageSrc" alt="Comming Soon!" (click)="viewCard($event, cardData)">
+                <img class="img" [src]="cardData.categoryImgSrc" alt="Comming Soon!" (click)="viewCard($event, cardData)">
             </div>
             <div>
                 <div class="card-details">

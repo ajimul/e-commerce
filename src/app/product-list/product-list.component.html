@@ -1,22 +1,22 @@
 <section>
     <h1>All Top Categories Tea deals</h1>
             <div class="cards-container" #shoppingContainer>
-                <div class="card" *ngFor="let cl of cardList; let i = index"
-                    (click)="onCardClick($event, cl, i)">
+                <div class="card" *ngFor="let pDTO of productDTO; let i = index"
+                    (click)="onCardClick($event, pDTO, i)">
                     <div class="card-content">
                         <div class="card-title ">
-                            <h2>{{ cl.title }}</h2>
+                            <h2>{{ pDTO.productName }}</h2>
                         </div>
                         <div class="card-img ">
-                            <img [src]="cl.imageSrc" alt="Comming Soon!">
+                            <img [src]="basePath+pDTO.productImgSrc" alt="Comming Soon!">
                         </div>
 
-                        <div class="card-description color">{{cl.description}}</div>
+                        <div class="card-description color">{{pDTO.productDesc}}</div>
                         <!-- <div class="card-price ">₹{{cl.price}}</div> -->
                         <!-- <div class="card-rating ">
                 <i class="fa-solid fa-star"*ngFor="let _ of [].constructor(cl.stars).fill(0); let i = index"></i>
               </div> -->
-                        <div class="card-location ">{{ cl.location }}</div>
+                        <div class="card-location ">Location</div>
                         <!-- <button class="card-btn">Add to Cart</button> -->
                     </div>
                 </div>

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { CardList } from '../interfaces/CardList';
 import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
+import { CategoryDetails } from '../interfaces/share-interface';
 
 @Injectable({
   providedIn: 'root'
@@ -8,11 +8,11 @@ import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
 export class CategoryDetailsService {
 
   constructor() { }
-  categoryDetails!: CardList;
-  private categoryDetailsDataSubject = new BehaviorSubject<CardList>(this.categoryDetails);
+  categoryDetails!: CategoryDetails;
+  private categoryDetailsDataSubject = new BehaviorSubject<CategoryDetails>(this.categoryDetails);
   public categoryDetailsData$ = this.categoryDetailsDataSubject.asObservable();
 
-  setCategoryDetails(categoryDetailsData: CardList) {
+  setCategoryDetails(categoryDetailsData: CategoryDetails) {
     this.categoryDetailsDataSubject.next(categoryDetailsData);
   }
 }

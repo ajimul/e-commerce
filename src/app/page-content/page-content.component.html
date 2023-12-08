@@ -11,10 +11,10 @@
     <app-product-list (categoryCardClicked)="onCategoryClicked($event)"></app-product-list>
 </section>
 <section class="featured-products">
-    <ng-container *ngIf="requestCard !== undefined && requestCard.length!==0; else noDataBlock">
+    <!-- <ng-container *ngIf="requestCard !== undefined && requestCard.length!==0; else noDataBlock"> -->
         <app-category-list [requestCard]="requestCard"
             (cardClicked)="onCardClicked($event)" (addCardClicked)="addToMyCard($event)"></app-category-list>
-    </ng-container>
+    <!-- </ng-container> -->
     <ng-template #noDataBlock>
         <app-category-list (cardClicked)="onCardClicked($event)" (addCardClicked)="addToMyCard($event)"></app-category-list>
     </ng-template>

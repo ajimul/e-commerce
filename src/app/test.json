@@ -1,0 +1,234 @@
+{
+    "productName": "REGULAR TEA",
+    "productDesc": "Description of the product",
+    "productImgSrc": "REGULAR TEA (1).jpeg",
+    "categoryDetails": [
+        {
+            "categoryName": "REGULAR TEA A",
+            "stockQuantity": 10,
+            "categoryImgSrc": "REGULAR TEA (1).jpeg",
+            "productDetailsName": "Darjeeling Tea",
+            "productDate": "2023-01-01",
+            "description": "Product category description",
+            "ratingScore": 4.5,
+            "mRP": 19.99,
+            "price": 15.99,
+            "discount": 0.2,
+            "gST": 0.1,
+            "teaForm": "Loose",
+            "specification": "REGULAR TEA with natural mint",
+            "flavour": "Masala (Natural)",
+            "teaType": "Herbal REGULAR TEA",
+            "packageType": "Pouch (Zipper)",
+            "shelfLife": "09 Months",
+            "netQuantity": "100 gm",
+            "addedExtracts": "NA",
+            "grades": "Grade A",
+            "productClass": "Class 1",
+            "region": "Darjeeling",
+            "characteristics": "Tea",
+            "liquor": "category Liquor",
+            "useFor": "Tea Usage",
+            "inLoose": "Yes",
+            "loosePrice": 10.99,
+            "transportCharge": 5.0,
+            "looseMOQ": "5 kgs",
+            "ingredients":"REGULAR TEA & Mint Leaf",
+            "categoryDetailsImgSrc": [
+                {
+                    "cDetailsImgSrc": "REGULAR TEA (1).jpeg"
+                },
+                {
+                    "cDetailsImgSrc": "REGULAR TEA (2).jpeg"
+                },
+                {
+                    "cDetailsImgSrc": "REGULAR TEA (3).jpeg"
+                },
+                {
+                    "cDetailsImgSrc": "REGULAR TEA (4).jpeg"
+                }
+            ]
+        },
+        {
+            "categoryName": "MINT GREEN TEA A",
+            "stockQuantity": 10,
+            "categoryImgSrc": "MINT GREEN TEA (1).jpeg",
+            "productDetailsName": "Darjeeling Tea",
+            "productDate": "2023-01-01",
+            "description": "Product category description",
+            "ratingScore": 4.5,
+            "mRP": 19.99,
+            "price": 15.99,
+            "discount": 0.2,
+            "gST": 0.1,
+            "teaForm": "Loose",
+            "specification": "Green tea with natural mint",
+            "flavour": "Masala (Natural)",
+            "teaType": "Herbal Green tea",
+            "packageType": "Pouch (Zipper)",
+            "shelfLife": "09 Months",
+            "netQuantity": "100 gm",
+            "addedExtracts": "NA",
+            "grades": "Grade A",
+            "productClass": "Class 1",
+            "region": "Darjeeling",
+            "characteristics": "Tea",
+            "liquor": "category Liquor",
+            "useFor": "Tea Usage",
+            "inLoose": "Yes",
+            "loosePrice": 10.99,
+            "transportCharge": 5.0,
+            "looseMOQ": "5 kgs",
+            "ingredients":"Green Tea & Mint Leaf",
+            "categoryDetailsImgSrc": [
+                {
+                    "cDetailsImgSrc": "MINT GREEN TEA (1).jpeg"
+                },
+                {
+                    "cDetailsImgSrc": "MINT GREEN TEA (2).jpeg"
+                },
+                {
+                    "cDetailsImgSrc": "MINT GREEN TEA (3).jpeg"
+                },
+                {
+                    "cDetailsImgSrc": "MINT GREEN TEA (4).jpeg"
+                }
+            ]
+        },{
+            "categoryName": "MASALA TEA A",
+            "stockQuantity": 10,
+            "categoryImgSrc": "MASALA TEA (1).jpeg",
+            "productDetailsName": "Darjeeling Tea",
+            "productDate": "2023-01-01",
+            "description": "Product  category description",
+            "ratingScore": 4.5,
+            "mRP": 19.99,
+            "price": 15.99,
+            "discount": 0.2,
+            "gST": 0.1,
+            "teaForm": "Loose",
+            "specification": "Regular Tea with Masala",
+            "flavour": "Masala (Natural)",
+            "teaType": "Regular Refreshing",
+            "packageType": "Pouch",
+            "shelfLife": "12 months",
+            "netQuantity": "250 gm",
+            "addedExtracts": "NA",
+            "grades": "Grade A",
+            "productClass": "Class 1",
+            "region": "Darjeeling",
+            "characteristics": "Tea",
+            "liquor": " category Liquor",
+            "useFor": "Tea Usage",
+            "inLoose": "Yes",
+            "loosePrice": 10.99,
+            "transportCharge": 5.0,
+            "looseMOQ": "5 kgs",
+            "ingredients":"CTC tea & Mix Masala",
+            "categoryDetailsImgSrc": [
+                {
+                    "cDetailsImgSrc": "MASALA TEA (1).jpeg"
+                },
+                {
+                    "cDetailsImgSrc": "MASALA TEA (2).jpeg"
+                },
+                {
+                    "cDetailsImgSrc": "MASALA TEA (3).jpeg"
+                },
+                {
+                    "cDetailsImgSrc": "MASALA TEA (4).jpeg"
+                }
+            ]
+        },{
+            "categoryName": "HERBAL GREEN TEA A",
+            "stockQuantity": 10,
+            "categoryImgSrc": "HERBAL GREEN TEA (1).jpeg",
+            "productDetailsName": "Darjeeling Tea",
+            "productDate": "2023-01-01",
+            "description": "Product  category description",
+            "ratingScore": 4.5,
+            "mRP": 19.99,
+            "price": 15.99,
+            "discount": 0.2,
+            "gST": 0.1,
+            "teaForm": "Loose",
+            "specification": "Regular Tea with Herbal",
+            "flavour": "Herbal (Natural)",
+            "teaType": "Regular Refreshing",
+            "packageType": "Pouch",
+            "shelfLife": "12 months",
+            "netQuantity": "250 gm",
+            "addedExtracts": "NA",
+            "grades": "Grade A",
+            "productClass": "Class 1",
+            "region": "Darjeeling",
+            "characteristics": "Tea",
+            "liquor": " category Liquor",
+            "useFor": "Tea Usage",
+            "inLoose": "Yes",
+            "loosePrice": 10.99,
+            "transportCharge": 5.0,
+            "looseMOQ": "5 kgs",
+            "ingredients":"CTC tea & Mix Herbal",
+            "categoryDetailsImgSrc": [
+                {
+                    "cDetailsImgSrc": "HERBAL GREEN TEA (1).jpeg"
+                },
+                {
+                    "cDetailsImgSrc": "HERBAL GREEN TEA (2).jpeg"
+                },
+                {
+                    "cDetailsImgSrc": "HERBAL GREEN TEA (3).jpeg"
+                },
+                {
+                    "cDetailsImgSrc": "HERBAL GREEN TEA (4).jpeg"
+                }
+            ]
+        },{
+            "categoryName": "HEALTH TEA A",
+            "stockQuantity": 10,
+            "categoryImgSrc": "HEALTH TEA (1).jpeg",
+            "productDetailsName": "Darjeeling Tea",
+            "productDate": "2023-01-01",
+            "description": "Product  category description",
+            "ratingScore": 4.5,
+            "mRP": 19.99,
+            "price": 15.99,
+            "discount": 0.2,
+            "gST": 0.1,
+            "teaForm": "Loose",
+            "specification": "Regular Tea with HEALTH TEA",
+            "flavour": "HEALTH TEA (Natural)",
+            "teaType": "Regular Refreshing",
+            "packageType": "Pouch",
+            "shelfLife": "12 months",
+            "netQuantity": "250 gm",
+            "addedExtracts": "NA",
+            "grades": "Grade A",
+            "productClass": "Class 1",
+            "region": "Darjeeling",
+            "characteristics": "Tea",
+            "liquor": " category Liquor",
+            "useFor": "Tea Usage",
+            "inLoose": "Yes",
+            "loosePrice": 10.99,
+            "transportCharge": 5.0,
+            "looseMOQ": "5 kgs",
+            "ingredients":"CTC tea & Mix HEALTH TEA",
+            "categoryDetailsImgSrc": [
+                {
+                    "cDetailsImgSrc": "HEALTH TEA (1).jpeg"
+                },
+                {
+                    "cDetailsImgSrc": "HEALTH TEA (2).jpeg"
+                },
+                {
+                    "cDetailsImgSrc": "HEALTH TEA (3).jpeg"
+                },
+                {
+                    "cDetailsImgSrc": "HEALTH TEA (4).jpeg"
+                }
+            ]
+        }
+    ]
+}

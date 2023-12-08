@@ -2,22 +2,22 @@
 
 <div class="cards-container">
   
-    <div class="card" *ngFor="let cardData of cardList; let i = index" (click)="viewCard($event, cardData, i)">
+    <div class="card" *ngFor="let cd of categoryDetails; let i = index" (click)="viewCard($event, cd, i)">
   
       <div class="card-content">
         <div class="card-img ">
-          <img [src]="cardData.imageSrc" alt="Comming Soon!">
+          <img [src]="basePath+cd.categoryImgSrc" alt="Comming Soon!">
         </div>
         <div class="card-title ">
-          <h2>{{ cardData.title }}</h2>
+          <h2>{{ cd.categoryName }}</h2>
         </div>
-        <div class="card-description ">{{cardData.description}}</div>
-        <div class="card-price ">₹{{cardData.price}}</div>
+        <div class="card-description ">{{cd.description}}</div>
+        <div class="card-price ">₹{{cd.price}}</div>
         <div class="card-rating ">
-          <i class="fa-solid fa-star" *ngFor="let _ of [].constructor(cardData.stars).fill(0); let i = index"></i>
+          <i class="fa-solid fa-star" *ngFor="let _ of [].constructor(5).fill(0); let i = index"></i>
         </div>
-        <div class="card-location ">{{ cardData.location }}</div>
-        <button class="card-btn" (click)="addCard($event,cardData)">Add to Cart</button>
+        <div class="card-location ">location</div>
+        <button class="card-btn" (click)="addCard($event,cd)">Add to Cart</button>
       </div>
   </div>
   <div>
