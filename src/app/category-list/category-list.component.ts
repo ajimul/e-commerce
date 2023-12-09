@@ -1,10 +1,10 @@
 import { ChangeDetectionStrategy } from '@angular/compiler';
-import { AfterViewInit, ChangeDetectorRef, Component, EventEmitter, Input, NgZone, Output } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, EventEmitter, Input, NgZone, Optional, Output } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { CategoryDetailsService } from '../shared/category-details.service';
-import { MyCardListService } from '../shared/my-card-list.service';
-import { CategoryDetails, ProductDTO } from '../interfaces/share-interface';
+import { CategoryDetailsViewService } from '../shared/category-details-view.service';
+import { CategoryDetails, MyCard, MyCardDTO, ProductDTO } from '../interfaces/share-interface';
 import { ApiService } from '../api-service/ApiService';
+import { CardValueService } from '../shared/card-value.service';
 
 
 
@@ -25,9 +25,9 @@ export class CategoryCardListComponent {
   ];
   constructor(
     private cd: ChangeDetectorRef,
-    private categoryDetailsService: CategoryDetailsService,
-    private myCardListService: MyCardListService,
+    private categoryDetailsViewService: CategoryDetailsViewService,
     private route: Router,
+    private cardValue: CardValueService,
     private apiService: ApiService) {
   }
   getCategoryDetails(productId: number) {
@@ -54,7 +54,7 @@ export class CategoryCardListComponent {
       }
     })
   }
-  ngOnInit(){
+  ngOnInit() {
     this.getAllCategoryDetails();
   }
   ngOnChanges() {
@@ -63,14 +63,44 @@ export class CategoryCardListComponent {
     }
   }
 
-  viewCard(event: MouseEvent, categoryDetails: CategoryDetails, index: number) {
+
+  viewCard(event: MouseEvent, data: CategoryDetails, index: number) {
     this.route.navigate(['home/category-details'], { skipLocationChange: true });
-    this.categoryDetailsService.setCategoryDetails(categoryDetails);
+    this.categoryDetailsViewService.setCategoryDetailsView(data);
   }
   addCard(event: Event, cardList: CategoryDetails) {
-    event.stopPropagation();//to skip click effect parent child, only effect on child  
-    this.myCardListService.setMyCardList([cardList]);
 
+    event.stopPropagation();//to skip click effect parent child, only effect on child  
+    const mycard = {
+      clientRefId: 1,
+      categoryDetailsId: cardList.cDetailsId
+    } as MyCard;
+
+    this.apiService.setMyCards(mycard).subscribe({
+      next: (value) => {
+        alert('Card Added Success!');
+        this.getMyCardsByClientRefId(mycard.clientRefId)
+      },
+      error: (e) => {
+        alert('Card Already Exist!');
+      }
+    
+    });
+
+
+  }
+
+  getMyCardsByClientRefId(clientId: number) {
+    this.apiService.getMyCardsByClientRefId(clientId).subscribe({
+      next: (value) => {
+        this.cardValue.setCardValue(value.length);
+      },
+      error: (e) => {
+
+      }, complete: () => {
+
+      }
+    })
   }
 
 }

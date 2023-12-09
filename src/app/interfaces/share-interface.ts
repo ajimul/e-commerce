@@ -45,3 +45,23 @@ export interface CategoryDetails {
     cDetailsImgSrc?: string;
   }
   
+  export interface MyCard {
+    mycardId: number;
+    clientRefId: number;
+    categoryDetailsId: number;
+  }
+  export interface MyCardDTO {
+    categoryDetailsId: number;
+  }
+
+  export interface Client {
+    clientId: number;
+    name: string;
+    passkey: string;
+    email: string;
+    contact: string;
+    registrationDate: string; 
+    address: string;
+    isActive: boolean;
+    myCard: MyCard[];
+  }

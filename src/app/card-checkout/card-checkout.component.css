@@ -215,9 +215,7 @@ cursor: pointer;
 .card-info {
     flex: 1;
 }
-.card-delete:hover{
-   cursor: pointer;
-}
+
 
 
 @media screen and (min-width: 300px)and (max-width: 600px) {

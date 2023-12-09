@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
-import { MyCardListService } from '../shared/my-card-list.service';
+import { ApiService } from '../api-service/ApiService';
+import { CardValueService } from '../shared/card-value.service';
 
 @Component({
   selector: 'app-navebar',
@@ -11,10 +12,12 @@ export class NavebarComponent {
   isLoginn: boolean = false;
   myCard: number = -1;
 
-  constructor(private dataSharingService: MyCardListService,
-    private route: Router) { }
+  constructor(
+    private route: Router,
+    private cardValue: CardValueService,
+    private apiService: ApiService) { }
   loginn() {
-    console.log("click")
+    // alert("click")
     if (this.isLoginn) {
       this.isLoginn = false;
     }
@@ -22,10 +25,22 @@ export class NavebarComponent {
       this.isLoginn = true;
     }
   }
+  getMyCardsByClientRefId(clientId: number) {
+    this.apiService.getMyCardsByClientRefId(clientId).subscribe({
+      next: (value) => {
+        this.cardValue.setCardValue(value.length);
+      },
+      error: (e) => {
 
+      }, complete: () => {
+
+      }
+    })
+  }
   ngOnInit() {
-    this.dataSharingService.myCardListData$.subscribe(data => {
-      this.myCard += 1;
+    this.getMyCardsByClientRefId(1);
+    this.cardValue.cardValueData$.subscribe(data => {
+      this.myCard = data;
     });
 
   }

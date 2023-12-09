@@ -8,21 +8,19 @@
                 <h2>Price &nbsp;Subtotal (1 Item):   ₹999.00</h2>
             </div>
         </div>
-        <div class="card" *ngFor="let cardData of myCardList; let i = index">
+        <div class="card" *ngFor="let card of myCardList; let i = index">
             <div class="card-image">
-                <img class="img" [src]="cardData.categoryImgSrc" alt="Comming Soon!" (click)="viewCard($event, cardData)">
+                <img class="img" [src]="basePath+card.categoryImgSrc" alt="Comming Soon!" (click)="viewCard($event, card)">
             </div>
             <div>
                 <div class="card-details">
                     <div class="card-info">
-                        <p><strong>Product 1</strong></p>
-                        <p class="product-description">Green tea is a refreshing beverage known for its rich
-                            antioxidants and potential health benefits. Derived from Camellia sinensis leaves, it offers
-                            a delicate flavor and is celebrated for promoting overall well-being.
-                        <p class="stock-availability">Stock Available: 10</p>
+                        <p><strong>{{card.categoryName}}</strong></p>
+                        <p class="product-description">{{card.description}}
+                        <p class="stock-availability">Stock Available: {{card.stockQuantity}}</p>
                     </div>
                     <div class="price"><label for="">
-                            <strong>₹999.00&nbsp;&nbsp;</strong> <input type="checkbox"></label>
+                            <strong>₹{{card.price}}&nbsp;&nbsp;</strong> <input type="checkbox"></label>
                     </div>
                 </div><br>
                 <div class="card-action">
@@ -34,7 +32,7 @@
                                 <i class="fa-solid fa-caret-down fa-3xl qty-down"></i>
                             </div>
                         </div>
-                        <div class="delete-action">&nbsp;&nbsp;
+                        <div class="delete-action" (click)="cardDelete($event,card)">&nbsp;&nbsp;
                             <div >
                                 <i class="fa-solid fa-trash-can fa-lg " ></i>
                             </div>&nbsp;&nbsp;

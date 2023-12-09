@@ -13,11 +13,12 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { CategoryDetailsComponent } from './category-details/category-details.component';
 import { NumberInputDirective } from './directives/number-input.directive';
-import { MyCardListService } from './shared/my-card-list.service';
-import { CategoryDetailsService } from './shared/category-details.service';
+import { CategoryDetailsViewService } from './shared/category-details-view.service';
 import { CardCheckoutComponent } from './card-checkout/card-checkout.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ApiService } from './api-service/ApiService';
+import { LoginComponent } from './login/login.component';
+import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 const appRouts: Routes = [
   {
@@ -50,14 +51,17 @@ const appRouts: Routes = [
     CategoryDetailsComponent,
     NumberInputDirective,
     CardCheckoutComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     HttpClientModule,
+    ReactiveFormsModule,
     RouterModule.forRoot(appRouts)
   ],
-  providers: [MyCardListService,  CategoryDetailsService,ApiService],
+  providers: [  CategoryDetailsViewService,ApiService],
   bootstrap: [AppComponent]
   // bootstrap: [CardCheckoutComponent]
   // bootstrap: [PageContentComponent]

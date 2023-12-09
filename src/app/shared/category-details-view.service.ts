@@ -5,14 +5,14 @@ import { CategoryDetails } from '../interfaces/share-interface';
 @Injectable({
   providedIn: 'root'
 })
-export class CategoryDetailsService {
+export class CategoryDetailsViewService {
 
   constructor() { }
   categoryDetails!: CategoryDetails;
   private categoryDetailsDataSubject = new BehaviorSubject<CategoryDetails>(this.categoryDetails);
   public categoryDetailsData$ = this.categoryDetailsDataSubject.asObservable();
 
-  setCategoryDetails(categoryDetailsData: CategoryDetails) {
-    this.categoryDetailsDataSubject.next(categoryDetailsData);
+  setCategoryDetailsView(data: CategoryDetails) {
+    this.categoryDetailsDataSubject.next(data);
   }
 }

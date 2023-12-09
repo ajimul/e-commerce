@@ -1,7 +1,8 @@
 import { Component, ElementRef, HostListener, QueryList, ViewChild, ViewChildren } from '@angular/core';
-import { CategoryDetailsService } from '../shared/category-details.service';
-import { MyCardListService } from '../shared/my-card-list.service';
-import { CategoryDetails, CategoryDetailsImgSrc } from '../interfaces/share-interface';
+import { CategoryDetailsViewService } from '../shared/category-details-view.service';
+import { CategoryDetails, CategoryDetailsImgSrc, MyCard } from '../interfaces/share-interface';
+import { ApiService } from '../api-service/ApiService';
+import { CardValueService } from '../shared/card-value.service';
 
 @Component({
   selector: 'app-category-details',
@@ -15,15 +16,45 @@ export class CategoryDetailsComponent {
   @ViewChildren('.indicators div') indicators: QueryList<ElementRef> | undefined;
 
   categoryDetailsImgSrc: CategoryDetailsImgSrc[] = [];
-  constructor(private dataSharingService: CategoryDetailsService,
-    private myCardListService: MyCardListService) { }
-  addCard(event: Event) {
+  constructor(private categoryDetailsViewService: CategoryDetailsViewService,
+    private apiService: ApiService,
+    private cardValue: CardValueService
+  ) { }
+  addCard(event: Event, cardList: CategoryDetails) {
     event.stopPropagation();//to skip click effect parent child, only effect on child  
-    this.myCardListService.setMyCardList(this.categoryDetails);
+    const mycard = {
+      clientRefId: 1,
+      categoryDetailsId: cardList.cDetailsId
+    } as MyCard;
+
+    this.apiService.setMyCards(mycard).subscribe({
+      next: (value) => {
+        alert('Card Added Success!');
+        this.getMyCardsByClientRefId(mycard.clientRefId)
+      },
+      error: (e) => {
+        alert('Card Already Exist!');
+      }
+
+    });
+
 
   }
+
+  getMyCardsByClientRefId(clientId: number) {
+    this.apiService.getMyCardsByClientRefId(clientId).subscribe({
+      next: (value) => {
+        this.cardValue.setCardValue(value.length);
+      },
+      error: (e) => {
+
+      }, complete: () => {
+
+      }
+    })
+  }
   ngOnInit() {
-    this.dataSharingService.categoryDetailsData$.subscribe((data: CategoryDetails) => {
+    this.categoryDetailsViewService.categoryDetailsData$.subscribe((data: CategoryDetails) => {
       if (data) {
         this.categoryDetails = [data];
       }
